@@ -24,7 +24,7 @@ def tester_borne_parking(id_parking, id_borne):
     if etat_borne != 'active':
         return f"ERREUR;Borne {id_borne_res} inactive"
 
-    return f"Borne {id_borne_res} active dans le parking {id_parking}"
+    return f"Borne {id_borne_res} active dans le parking {id_parking}" ## yasser
 
 
 # 🔹 Vérifier un contrat et sa validité
