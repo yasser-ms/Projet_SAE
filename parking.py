@@ -2,7 +2,7 @@ import psycopg2
 from db import get_connection
 from datetime import datetime
 
-# 🔹 Vérifier si la borne appartient au parking et est active
+# 🔹 Vérifier si la borne appartient au parking et est activej
 def tester_borne_parking(id_parking, id_borne):
     conn = get_connection()
     cur = conn.cursor()
