@@ -61,6 +61,7 @@ def verifier_contrat(id_contrat):
 
 # 🔹 Ajouter un événement dans l'historique
 def ajouter_historique(id_contrat, id_borne, etat_valide):
+    ## partie entre dans le parking
     conn = get_connection()
     cur = conn.cursor()
     heure_scanne = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -75,6 +76,8 @@ def ajouter_historique(id_contrat, id_borne, etat_valide):
     conn.commit()
     cur.close()
     conn.close()
+    ## partie sortie du parking si le dele est depassé pour le ticket
+    # le client paye une penalité
 
 ## verifcation de penalité
 

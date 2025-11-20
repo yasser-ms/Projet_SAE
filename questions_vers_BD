@@ -3,3 +3,34 @@
 3 - Extraire toutes les informations d’un contrat qui arrive à expiration aujourd’hui.
 4 - Afficher le plus gros tarif appliqué par parking, trié du plus élevé au plus faible.
 5
+# python
+ def verfiier_penalite(id_contrat):
+    # Connexion à la base de données
+    connexion = creer_connexion_bd()
+    curseur = connexion.cursor()
+    appel de focntion type_contrat = def verif_abonnement_ou_ticketHoraire(id_contrat)
+    heure_scan = Today().time()
+    date_scan = Today().date()
+
+    if(type_contrat == 'abonnement'):
+        # Récupérer la date d'expiration du contrat
+        curseur.execute("SELECT date_expiration FROM contrats WHERE id_contrat = %s", (id_contrat,))
+        date_expiration = curseur.fetchone()[0]
+        if(date_scan > date_expiration):
+            # Calculer le nombre de jours de retard
+            # calcule de penalite p = jrs*20 euro et ajoute penalite dans la BD
+    elif(type_contrat == 'ticketHoraire'):
+        # Récupérer l'heure de fin du ticket horaire
+        curseur.execute("SELECT heure_fin FROM tickets WHERE id_contrat = %s", (id_contrat,))
+        heure_fin = curseur.fetchone()[0]
+        if(heure_scan > heure_fin):
+            # Calculer le nombre de minutes ou heure
+            # calculer la pénalité correspondante p = h*10euro et ajoute penalite dans la BD
+
+    ajoute(historique(id_contrat)
+
+
+    # Vérifier si le contrat est expiré
+    date_actuelle = datetime.now().date()
+    if date_actuelle > date_expiration:
+        # Calculer le nombre
