@@ -54,3 +54,92 @@ def tester_contrat_parking(id_parking, id_contrat):
     id_contrat_res, id_place_res, id_parking_res = result
 
     return f"Contrat {id_contrat_res} associé à la place {id_place_res} dans le parking {id_parking_res}"
+
+
+
+#------------------------------------------------ omar
+#question 5)  affiche le parking le plus visités
+
+
+def parking_plus_visite():
+    """
+    Affiche le parking le plus visité de l'année en cours.
+    Retourne le tuple (id_parking : str, nom : str, nb_visites : int).
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+    query = """
+    SELECT id_parking, nom ,COUNT(nom) FROM verifie v NATURAL JOIN contrat NATURAL JOIN place NATURAL JOIN parking
+    WHERE etat_valide = 'encours_in' AND heure_scanne>= date_trunc('year', now())
+    GROUP BY id_parking, nom
+    ORDER BY COUNT(nom)
+    LIMIT 1;
+    """
+    cur.execute(query)
+    result = cur.fetchone()
+    cur.close()
+    conn.close()
+    print(result)
+    id
+    if result is None:
+        return "ERREUR;Aucun parking trouvé"
+    return result
+
+#question 6 :Afficher le nom des parkings et le nombre total de contrats actifs associés.
+
+def parkings_avec_contrats_actifs(id_parking: str):
+    """
+    Affiche le nom d'un parking avec le nombre total de contrats actifs associés.
+    Utile pour les stats pour ceux qui veulent acheter des abonnements
+    Retourne un tuples ( nom : str, nb_contrats_actifs : int).
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+    query = """
+    SELECT p.nom, COUNT(c.id_contrat) AS nb_contrats_actifs
+    FROM parking p
+    NATURAL JOIN place pl
+    NATURAL JOIN contrat c
+    WHERE c.etat_contrat = 'actif' and p.id_parking = %s 
+    GROUP BY p.nom
+    ORDER BY nb_contrats_actifs DESC;
+    """
+    cur.execute(query, (id_parking,))
+    results = cur.fetchall()
+    cur.close()
+    conn.close()
+    
+
+    if not results:
+        return "ERREUR;Aucun parking trouvé"
+    results=results[0]
+    print(results)
+    return results
+
+
+#question 7 : extraction de tous les parkings avec au moins 1 borne en panne
+ 
+def parkings_avec_borne_en_panne():
+    """
+    Extrait tous les parkings ayant au moins une borne en panne.
+    Retourne une liste de tuples (id_parking : str, nom : str).
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+    query = """
+    SELECT DISTINCT p.id_parking, p.nom, b.id_borne, b.etat
+    FROM parking p
+    NATURAL JOIN borne b
+    WHERE b.etat = 'en maintenance' OR b.etat = 'en panne';
+    """
+    cur.execute(query)
+    results = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    if not results:
+        return "Aucune panne trouvée"
+    
+    print(results)
+    return results
+
