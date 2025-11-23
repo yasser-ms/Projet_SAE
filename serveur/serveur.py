@@ -1,5 +1,5 @@
 import socket
-from parking import tester_borne_parking, verifier_contrat, verifier_penalite, type_borne
+from parking import tester_borne_parking, verifier_contrat, verifier_penalite, type_borne, scanne_contrat
 
 HOST = "0.0.0.0"
 PORT = 5000
@@ -53,17 +53,25 @@ while True:
         id_contrat = data2.strip()
         # print("Vérification du contrat :", id_contrat) -> DEBUG
 
-        valide, msg_contrat = verifier_contrat(id_contrat)
-        conn.sendall(msg_contrat.encode("utf-8"))
+
+        valide, msg_contrat = scanne_contrat(id_contrat,id_borne)
+        
+        if isinstance(msg_contrat, tuple):
+            try:
+                msg_contrat = str(msg_contrat[-1])
+            except Exception:
+                msg_contrat = " ".join(map(str, msg_contrat))
+
+        conn.sendall((msg_contrat).encode("utf-8"))
 
         if not valide:
             continue
-        
-        type_borne_val = type_borne(id_borne)
-        if type_borne_val == "sortie":
+    
+      ##  type_borne_val = type_borne(id_borne)
+        ##if type_borne_val == "sortie":
         # Vérifier pénalité (si borne sortie)
-         ok, msg_penalite = verifier_penalite(id_contrat, id_borne)
-         conn.sendall(msg_penalite.encode("utf-8"))
+         ##ok, msg_penalite = verifier_penalite(id_contrat, id_borne)
+         ##conn.sendall(msg_penalite.encode("utf-8"))
          
     except Exception as e:
         print("Erreur serveur :", e)

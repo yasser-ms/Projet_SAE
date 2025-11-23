@@ -1,7 +1,11 @@
-from questions_vers_la_BD import tester_contrat_parking, tester_borne_parking, extraire_nombre_vehicules_par_client,extraire_places_par_parking, extraire_clients_abonnement_long, extraire_paiements_importants
-# 🔹 Exemple d'appel
+from parking import *
+
 if __name__ == "__main__":
+    print("=== TESTS FONCTIONS DE parking.py ===")
+   ## print(scanne_contrat("CT00001","B0001"))
+    print(scanne_contrat("CT00001","B0001"))
     # test Question 1 et 2 : borne et parking
+    
 
     """ ## Borne Active et parking reconnue
     print(tester_borne_parking("PK0001", "B0001"))
@@ -39,4 +43,5 @@ if __name__ == "__main__":
 """ print(extraire_clients_abonnement_long()) """
 
     #test Question 6 : les plus grands tarifs payé par des clients pas moins de 100 euro
-print(extraire_paiements_importants())
+## print(extraire_paiements_importants())
+
