@@ -60,3 +60,29 @@ function generer_id_place($pdo) {
     return "P" . str_pad($numero, 3, "0", STR_PAD_LEFT);
 }
  */
+
+function generer_id_paiement($pdo) {
+    // Requête pour récupérer le plus grand id_paiement
+    $stmt = $pdo->prepare("
+        SELECT id_paiement
+        FROM paiement
+        ORDER BY CAST(SUBSTRING(id_paiement, 4) AS INTEGER) DESC
+        LIMIT 1
+    ");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Si aucun id_paiement n'existe, commencer à "PMT0001"
+    if (!$row) {
+        return "PMT0001";
+    }
+
+    // Récupérer le dernier id_paiement
+    $last_id = $row["id_paiement"]; // Exemple : "PMT0008"
+
+    // Extraire la partie numérique et incrémenter
+    $numero = intval(substr($last_id, 3)) + 1;
+
+    // Générer le nouvel id_paiement avec 4 chiffres (exemple : "PMT0009")
+    return "PMT" . str_pad($numero, 4, "0", STR_PAD_LEFT);
+}
