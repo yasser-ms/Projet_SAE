@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nadjib Yasser Omar"/>
+    <link rel="icon" type="image/png" href="../images/parking.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking IT</title>
     <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
@@ -16,11 +17,13 @@ if (session_status() === PHP_SESSION_NONE) {
     <header>
         <div class="navbar">
             <div class="logo">
-                <h1>Parking IT</h1>
-            </div>
+<h1 style="text-align: center; font-size: 36px; font-weight: bold; margin: 20px 0;">
+    <a href="index.php" style="text-decoration: none; color: #ffffffff;">
+        Parking IT
+    </a>
+</h1>            </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.php">Accueil</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li><a href="dashboard.php">Tableau de bord</a></li>
                         <li><a href="vehicule.php">Mes Vehicule</a></li>

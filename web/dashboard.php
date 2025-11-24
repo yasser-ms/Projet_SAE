@@ -41,7 +41,7 @@ include 'include/header.inc.php';
             <li style="margin-bottom: 10px;"><a href="vehicule.php" style="color: #007bff; text-decoration: none; font-weight: bold;">🚗 Gérer mes véhicules</a></li>
             <li style="margin-bottom: 10px;"><a href="achats.php" style="color: #007bff; text-decoration: none; font-weight: bold;">📋 Mes contrats</a></li>
             <li style="margin-bottom: 10px;"><a href="#" style="color: #007bff; text-decoration: none; font-weight: bold;">💳 Mes paiements</a></li>
-            <li style="margin-bottom: 10px;"><a href="#" style="color: #007bff; text-decoration: none; font-weight: bold;">⚙️ Paramètres</a></li>
+            <li style="margin-bottom: 10px;"><a href="parametres.php" style="color: #007bff; text-decoration: none; font-weight: bold;">⚙️ Paramètres</a></li>
         </ul>
     </div>
 </div>
