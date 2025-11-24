@@ -3,7 +3,7 @@ from parking import *
 if __name__ == "__main__":
     print("=== TESTS FONCTIONS DE parking.py ===")
    ## print(scanne_contrat("CT00001","B0001"))
-    print(scanne_contrat("CT00001","B0001"))
+   
     # test Question 1 et 2 : borne et parking
     
 
@@ -44,4 +44,6 @@ if __name__ == "__main__":
 
     #test Question 6 : les plus grands tarifs payé par des clients pas moins de 100 euro
 ## print(extraire_paiements_importants())
+
+
 
