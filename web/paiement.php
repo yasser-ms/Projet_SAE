@@ -113,7 +113,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // On utilise une transaction pour insérer le contrat et mettre la place à jour
                         $pdo->beginTransaction();
 
+                        // Générer un nouvel ID pour le contrat
                         $id_contrat = generer_id_contrat($pdo);
+
+                        // Insérer dans la table contrat
                         $stmt = $pdo->prepare("
                             INSERT INTO contrat (id_contrat, id_vehicule, id_place, date_debut, date_fin, etat_contrat, type_contrat) 
                             VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -128,12 +131,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $reservation['type_contrat']
                         ]);
 
+                        // Si le contrat est un ticketHoraire
+                        if ($reservation['type_contrat'] === 'ticketHoraire') {
+                            // Calculer la durée totale en heures
+                            $date_debut = new DateTime($reservation['date_debut']);
+                            $date_fin = new DateTime($reservation['date_fin']);
+                            $interval = $date_debut->diff($date_fin);
+                            $duree_totale = ($interval->days * 24) + $interval->h;
+
+                            // Insérer dans la table ticketHoraire
+                            $stmt = $pdo->prepare("
+                                INSERT INTO ticketHoraire (id_ticket, tarif_horaire, duree_totale) 
+                                VALUES (?, ?, ?)
+                            ");
+                            $stmt->execute([
+                                $id_contrat,
+                                1.5, // Tarif horaire fixe
+                                $duree_totale
+                            ]);
+                        }
+
+                        // Si le contrat est un abonnement
+                        elseif ($reservation['type_contrat'] === 'abonnement') {
+                            // Insérer dans la table abonnement
+                            $stmt = $pdo->prepare("
+                                INSERT INTO abonnement (id_abonnement, tarif_mensuel, renouvelable) 
+                                VALUES (?, ?, ?)
+                            ");
+                            $stmt->execute([
+                                $id_contrat,
+                                50, // Tarif mensuel fixe
+                                true // Renouvelable
+                            ]);
+                        }
+
                         // Mettre à jour la disponibilité de la place
                         $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
                         $stmt->execute([$reservation['id_place']]);
 
+                        // Commit de la transaction
                         $pdo->commit();
 
+                        // Message de succès
                         $success = "
                             <div style='background-color: #d4edda; color: #155724; padding: 20px; border-radius: 8px; border: 1px solid #c3e6cb;'>
                                 <h2 style='margin-top: 0;'>✅ Paiement du contrat effectué avec succès !</h2>
@@ -144,6 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p><strong>Date de début :</strong> " . htmlspecialchars($reservation['date_debut'] ?? '') . "</p>
                                 <p><strong>Date de fin :</strong> " . htmlspecialchars($reservation['date_fin'] ?? '') . "</p>
                                 <p><strong>Place attribuée :</strong> " . htmlspecialchars($reservation['id_place'] ?? 'Non spécifiée') . "</p>
+                                <p><strong>ID du contrat :</strong> " . htmlspecialchars($id_contrat) . "</p>
                                 <p>Votre contrat a été activé avec succès. Merci pour votre confiance !</p>
                             </div>
                             <div style='text-align: center; margin-top: 20px;'>
@@ -165,7 +205,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         error_log("Erreur création contrat : " . $e->getMessage());
                     }
                 }
-
             } else {
                 $error = "Aucune action de paiement spécifiée.";
             }

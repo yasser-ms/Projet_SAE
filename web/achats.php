@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type_contrat = $_POST['type_contrat'] ?? null;
     $date_debut = $_POST['date_debut'] ?? null;
     $duree = $_POST['duree'] ?? null; // Durée en heures ou semaines
+    $type_vehicule = get_vehicle_type($pdo, $id_vehicule);
 
     // Vérifier que toutes les données nécessaires sont présentes
     if ($id_parking && $id_vehicule && $type_contrat && $date_debut && $duree) {
@@ -40,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (empty($error)) {
             // Utiliser la fonction attribuer_place pour trouver une place disponible
-            $id_place = attribuer_place($pdo, $id_parking);
+            $id_place = attribuer_place($pdo, $id_parking, $type_vehicule);
 
             if ($id_place) {
                 // Mettre à jour la disponibilité de la place (est_dispo = false)
@@ -173,5 +174,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 </script>
+
 
 <?php include 'include/footer.inc.php'; ?>

@@ -95,7 +95,6 @@ include 'include/header.inc.php';
             <label for="type">Type :</label>
             <select id="type" name="type" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                 <option value="voiture">Voiture</option>
-                <option value="utilitaire">Utilitaire</option>
                 <option value="camion">Camion</option>
                 <option value="moto">Moto</option>
                 <option value="bus">Bus</option>

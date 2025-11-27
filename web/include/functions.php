@@ -39,27 +39,6 @@ function generer_id_contrat($pdo) {
 
     return "CT" . str_pad($numero, 5, "0", STR_PAD_LEFT);
 }
-/* 
-function generer_id_place($pdo) {
-    $stmt = $pdo->prepare("
-        SELECT id_place
-        FROM place
-        ORDER BY CAST(SUBSTRING(id_place, 2) AS INTEGER) DESC
-        LIMIT 1
-    ");
-    $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$row) {
-        return "P001";
-    }
-
-    $last_id = $row["id_place"];   // P014
-    $numero = intval(substr($last_id, 1)) + 1;
-
-    return "P" . str_pad($numero, 3, "0", STR_PAD_LEFT);
-}
- */
 
 function generer_id_paiement($pdo) {
     // Requête pour récupérer le plus grand id_paiement
@@ -145,17 +124,27 @@ function delete_vehicle($pdo, $id_vehicule) {
     return $stmt->execute([$id_vehicule]);
 }
 
-function attribuer_place($pdo, $id_parking) {
-    $stmt = $pdo->prepare("SELECT id_place FROM place WHERE id_parking = ? AND est_dispo = true LIMIT 1");
-    $stmt->execute([$id_parking]);
+function attribuer_place($pdo, $id_parking, $type_vehicule) {
+    // Requête pour trouver une place disponible correspondant au type de véhicule
+    $stmt = $pdo->prepare("
+        SELECT id_place 
+        FROM place 
+        WHERE id_parking = ? 
+          AND type_place = ? 
+          AND est_dispo = true 
+        LIMIT 1
+    ");
+    $stmt->execute([$id_parking, $type_vehicule]);
     $place = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($place) {
+        // Marquer la place comme occupée
         $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
         $stmt->execute([$place['id_place']]);
         return $place['id_place'];
     }
 
+    // Retourner null si aucune place n'est disponible
     return null;
 }
 
@@ -303,3 +292,11 @@ function calculate_contract_price($type_contrat, $duree) {
         throw new Exception("Type de contrat invalide.");
     }
 }
+
+function get_vehicle_type($pdo, $id_vehicule) {
+    $stmt = $pdo->prepare("SELECT type FROM vehicule WHERE id_vehicule = ?");
+    $stmt->execute([$id_vehicule]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row ? $row['type'] : null;
+}
+
