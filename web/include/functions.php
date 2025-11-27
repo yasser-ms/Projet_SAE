@@ -140,7 +140,6 @@ function get_user_vehicles($pdo, $user_id) {
     $stmt->execute([$user_id]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
 function delete_vehicle($pdo, $id_vehicule) {
     $stmt = $pdo->prepare("DELETE FROM vehicule WHERE id_vehicule = ?");
     return $stmt->execute([$id_vehicule]);
@@ -159,4 +158,115 @@ function attribuer_place($pdo, $id_parking) {
 
     // Si aucune place n'est disponible, retourner null
     return null;
+}
+
+function get_active_subscriptions($pdo, $user_id) {
+    $stmt = $pdo->prepare("
+        SELECT c.id_contrat, c.id_place, c.date_debut, c.date_fin, p.nom AS parking_nom
+        FROM contrat c
+        JOIN place pl ON c.id_place = pl.id_place
+        JOIN parking p ON pl.id_parking = p.id_parking
+        WHERE c.id_vehicule IN (SELECT id_vehicule FROM vehicule WHERE id_client = ?)
+          AND c.type_contrat = 'abonnement'
+          AND c.etat_contrat = 'actif'
+    ");
+    $stmt->execute([$user_id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function cancel_subscription($pdo, $id_contrat, $id_place) {
+    try {
+        $pdo->beginTransaction();
+
+        // Mettre à jour l'état du contrat à "résilié"
+        $stmt = $pdo->prepare("UPDATE contrat SET etat_contrat = 'résilié' WHERE id_contrat = ?");
+        $stmt->execute([$id_contrat]);
+
+        // Rendre la place disponible
+        $stmt = $pdo->prepare("UPDATE place SET est_dispo = true WHERE id_place = ?");
+        $stmt->execute([$id_place]);
+
+        $pdo->commit();
+        return true;
+    } catch (Exception $e) {
+        $pdo->rollBack();
+        return false;
+    }
+}
+
+function calculate_end_date($start_date, $duration, $unit) {
+    $date = new DateTime($start_date);
+
+    if ($unit === 'hours') {
+        $date->modify("+{$duration} hours");
+    } elseif ($unit === 'weeks') {
+        $date->modify("+{$duration} weeks");
+    }
+
+    return $date->format('Y-m-d\TH:i');
+}
+
+function get_user_history($pdo, $user_id) {
+    $stmt = $pdo->prepare("
+        SELECT v.id_contrat, v.heure_scanne, b.type_de_borne, vh.modele AS vehicule_modele, p.nom AS parking_nom
+        FROM verifie v
+        JOIN borne b ON v.id_borne = b.id_borne
+        JOIN contrat c ON v.id_contrat = c.id_contrat
+        JOIN vehicule vh ON c.id_vehicule = vh.id_vehicule
+        JOIN place pl ON c.id_place = pl.id_place
+        JOIN parking p ON pl.id_parking = p.id_parking
+        WHERE c.id_vehicule IN (SELECT id_vehicule FROM vehicule WHERE id_client = ?)
+        ORDER BY v.heure_scanne DESC
+    ");
+    $stmt->execute([$user_id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Récupérer les pénalités d'un utilisateur
+function get_user_penalties($pdo, $user_id) {
+    $stmt = $pdo->prepare("
+        SELECT p.id_penalite, p.id_contrat, p.montant_p, p.description, p.date_creation
+        FROM penalite p
+        JOIN contrat c ON p.id_contrat = c.id_contrat
+        JOIN vehicule v ON c.id_vehicule = v.id_vehicule
+        WHERE v.id_client = ?
+    ");
+    $stmt->execute([$user_id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Supprimer une pénalité après paiement
+function delete_penalty($pdo, $id_penalite) {
+    $stmt = $pdo->prepare("DELETE FROM penalite WHERE id_penalite = ?");
+    return $stmt->execute([$id_penalite]);
+}
+
+// Vérifier si un paiement concerne une pénalité
+function is_penalty_payment($pdo, $id_penalite) {
+    $stmt = $pdo->prepare("SELECT * FROM penalite WHERE id_penalite = ?");
+    $stmt->execute([$id_penalite]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Récupérer les détails d'un contrat
+function get_contract_details($pdo, $id_contrat) {
+    $stmt = $pdo->prepare("
+        SELECT c.id_contrat, c.date_debut, c.date_fin, c.type_contrat, c.etat_contrat, p.nom AS parking_nom, v.modele AS vehicule_modele, cl.nom AS client_nom, cl.prenom AS client_prenom
+        FROM contrat c
+        JOIN place pl ON c.id_place = pl.id_place
+        JOIN parking p ON pl.id_parking = p.id_parking
+        JOIN vehicule v ON c.id_vehicule = v.id_vehicule
+        JOIN client cl ON v.id_client = cl.id_client
+        WHERE c.id_contrat = ?
+    ");
+    $stmt->execute([$id_contrat]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function update_card_details($pdo, $user_id, $numero_carte, $date_expiration, $cvv) {
+    // Format pour un tableau PostgreSQL (VARCHAR[])
+    $detail_carte = '{"' . $numero_carte . '","' . $date_expiration . '","' . $cvv . '"}';
+
+    $stmt = $pdo->prepare("UPDATE client SET detail_carte = ? WHERE id_client = ?");
+    return $stmt->execute([$detail_carte, $user_id]);
 }

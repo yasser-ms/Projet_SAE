@@ -35,11 +35,16 @@ $date_fin_obj = new DateTime($date_fin);
 $interval = $date_debut_obj->diff($date_fin_obj);
 
 if ($type_contrat === 'abonnement') {
-    $nb_jours = $interval->days; // Nombre de jours
-    $prix_total = $nb_jours * 49.99;
+    // Calculer le nombre de semaines
+    $nb_semaines = ceil($interval->days / 7); // Arrondir à la semaine supérieure
+    $prix_total = $nb_semaines * 10; // 10 € par semaine
 } elseif ($type_contrat === 'ticketHoraire') {
-    $nb_minutes = ($interval->days * 24 * 60) + ($interval->h * 60) + $interval->i; // Nombre total de minutes
-    $prix_total = $nb_minutes * 0.5;
+    // Calculer le nombre total d'heures
+    $nb_heures = ($interval->days * 24) + $interval->h; // Convertir les jours en heures et ajouter les heures
+    if ($interval->i > 0) {
+        $nb_heures++; // Ajouter une heure si des minutes supplémentaires existent
+    }
+    $prix_total = $nb_heures * 1.5; // 1,5 € par heure
 } else {
     die("Type de contrat invalide.");
 }

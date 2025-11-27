@@ -17,33 +17,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_vehicule = $_POST['id_vehicule'] ?? null;
     $type_contrat = $_POST['type_contrat'] ?? null;
     $date_debut = $_POST['date_debut'] ?? null;
-    $date_fin = $_POST['date_fin'] ?? null;
+    $duree = $_POST['duree'] ?? null; // Durée en heures ou semaines
 
     // Vérifier que toutes les données nécessaires sont présentes
-    if ($id_parking && $id_vehicule && $type_contrat && $date_debut && $date_fin) {
-        // Utiliser la fonction attribuer_place pour trouver une place disponible
-        $id_place = attribuer_place($pdo, $id_parking);
-
-        if ($id_place) {
-            // Mettre à jour la disponibilité de la place (est_dispo = false)
-            $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
-            $stmt->execute([$id_place]);
-
-            // Stocker les données dans la session
-            $_SESSION['reservation'] = [
-                'id_parking' => $id_parking,
-                'id_vehicule' => $id_vehicule,
-                'type_contrat' => $type_contrat,
-                'date_debut' => $date_debut,
-                'date_fin' => $date_fin,
-                'id_place' => $id_place
-            ];
-
-            // Rediriger vers la page paiement.php
-            header("Location: paiement.php");
-            exit();
+    if ($id_parking && $id_vehicule && $type_contrat && $date_debut && $duree) {
+        // Calculer la date de fin en fonction du type de contrat
+        if ($type_contrat === 'ticketHoraire') {
+            if ($duree < 1 || $duree > 24) {
+                $error = "La durée pour un ticket horaire doit être comprise entre 1 et 24 heures.";
+            } else {
+                $date_fin = calculate_end_date($date_debut, $duree, 'hours');
+            }
+        } elseif ($type_contrat === 'abonnement') {
+            if ($duree < 1 || $duree > 52) {
+                $error = "La durée pour un abonnement doit être comprise entre 1 et 52 semaines.";
+            } else {
+                $date_fin = calculate_end_date($date_debut, $duree, 'weeks');
+            }
         } else {
-            $error = "Aucune place disponible dans le parking sélectionné.";
+            $error = "Type de contrat invalide.";
+        }
+
+        if (empty($error)) {
+            // Utiliser la fonction attribuer_place pour trouver une place disponible
+            $id_place = attribuer_place($pdo, $id_parking);
+
+            if ($id_place) {
+                // Mettre à jour la disponibilité de la place (est_dispo = false)
+                $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
+                $stmt->execute([$id_place]);
+
+                // Stocker les données dans la session
+                $_SESSION['reservation'] = [
+                    'id_parking' => $id_parking,
+                    'id_vehicule' => $id_vehicule,
+                    'type_contrat' => $type_contrat,
+                    'date_debut' => $date_debut,
+                    'date_fin' => $date_fin,
+                    'id_place' => $id_place
+                ];
+
+                // Rediriger vers la page paiement.php
+                header("Location: paiement.php");
+                exit();
+            } else {
+                $error = "Aucune place disponible dans le parking sélectionné.";
+            }
         }
     } else {
         $error = "Veuillez remplir tous les champs pour effectuer une réservation.";
@@ -82,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div style="margin-bottom: 15px;">
                         <label for="type_contrat">Type de contrat :</label>
-                        <select id="type_contrat" name="type_contrat" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <select id="type_contrat" name="type_contrat" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" onchange="toggleDurationInput(this.value, '<?= $parking['id_parking'] ?>')">
                             <option value="ticketHoraire">Ticket Horaire</option>
                             <option value="abonnement">Abonnement</option>
                         </select>
@@ -104,12 +123,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div style="margin-bottom: 15px;">
                         <label for="date_debut">Date de début :</label>
-                        <input type="datetime-local" id="date_debut" name="date_debut" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="datetime-local" id="date_debut" name="date_debut" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" min="<?= date('Y-m-d\TH:i') ?>">
                     </div>
 
-                    <div style="margin-bottom: 15px;">
-                        <label for="date_fin">Date de fin :</label>
-                        <input type="datetime-local" id="date_fin" name="date_fin" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    <div style="margin-bottom: 15px;" id="duration-input-<?= $parking['id_parking'] ?>">
+                        <!-- Champ pour la durée -->
+                        <label for="duree">Durée :</label>
+                        <input type="number" id="duree" name="duree" min="1" max="24" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <small>Durée en heures pour un ticket horaire (1-24) ou en semaines pour un abonnement (1-52).</small>
                     </div>
 
                     <button type="submit" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">Valider</button>
@@ -123,6 +144,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     function toggleForm(formId) {
         const form = document.getElementById(formId);
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleDurationInput(typeContrat, parkingId) {
+        const durationInput = document.querySelector(`#duration-input-${parkingId}`);
+        const input = durationInput.querySelector('input');
+        if (typeContrat === 'ticketHoraire') {
+            input.setAttribute('max', '24');
+            input.setAttribute('placeholder', 'Durée en heures (1-24)');
+        } else if (typeContrat === 'abonnement') {
+            input.setAttribute('max', '52');
+            input.setAttribute('placeholder', 'Durée en semaines (1-52)');
+        }
     }
 </script>
 

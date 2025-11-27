@@ -48,6 +48,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Une erreur s'est produite lors de la suppression du véhicule.";
         }
     }
+
+    if (isset($_POST['cancel_subscription'])) {
+        // Résiliation d'un contrat d'abonnement
+        $id_contrat = $_POST['id_contrat'] ?? null;
+        $id_place = $_POST['id_place'] ?? null;
+
+        if ($id_contrat && $id_place) {
+            if (cancel_subscription($pdo, $id_contrat, $id_place)) {
+                $success = "Le contrat a été résilié avec succès, et la place a été libérée.";
+                $subscriptions = get_active_subscriptions($pdo, $user_id); // Recharger les contrats
+            } else {
+                $error = "Une erreur s'est produite lors de la résiliation du contrat.";
+            }
+        } else {
+            $error = "Données invalides pour la résiliation du contrat.";
+        }
+    }
 }
 
 include 'include/header.inc.php';
@@ -112,6 +129,32 @@ include 'include/header.inc.php';
         </ul>
     <?php else: ?>
         <p>Vous n'avez aucun véhicule enregistré.</p>
+    <?php endif; ?>
+
+    <h3>Résilier un contrat d'abonnement</h3>
+    <?php
+    // Récupérer les contrats d'abonnement actifs
+    $subscriptions = get_active_subscriptions($pdo, $user_id);
+    ?>
+
+    <?php if (count($subscriptions) > 0): ?>
+        <ul>
+            <?php foreach ($subscriptions as $subscription): ?>
+                <li>
+                    <strong>Contrat :</strong> <?= htmlspecialchars($subscription['id_contrat']) ?><br>
+                    <strong>Parking :</strong> <?= htmlspecialchars($subscription['parking_nom']) ?><br>
+                    <strong>Date de début :</strong> <?= htmlspecialchars($subscription['date_debut']) ?><br>
+                    <strong>Date de fin :</strong> <?= htmlspecialchars($subscription['date_fin']) ?><br>
+                    <form method="POST" action="parametres.php" style="margin-top: 10px;">
+                        <input type="hidden" name="id_contrat" value="<?= htmlspecialchars($subscription['id_contrat']) ?>">
+                        <input type="hidden" name="id_place" value="<?= htmlspecialchars($subscription['id_place']) ?>">
+                        <button type="submit" name="cancel_subscription" style="padding: 5px 10px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">Résilier</button>
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>Vous n'avez aucun contrat d'abonnement actif.</p>
     <?php endif; ?>
 </div>
 
