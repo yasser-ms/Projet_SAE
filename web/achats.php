@@ -47,18 +47,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
                 $stmt->execute([$id_place]);
 
-                // Stocker les données dans la session
+                // Récupérer le modèle du véhicule pour la réservation
+                $stmt = $pdo->prepare("SELECT modele FROM vehicule WHERE id_vehicule = ?");
+                $stmt->execute([$id_vehicule]);
+                $vehicule = $stmt->fetch(PDO::FETCH_ASSOC);
+                $vehicule_modele = $vehicule ? $vehicule['modele'] : '';
+
+                // Récupérer le nom du parking pour la réservation
+                $stmt = $pdo->prepare("SELECT nom FROM parking WHERE id_parking = ?");
+                $stmt->execute([$id_parking]);
+                $parking = $stmt->fetch(PDO::FETCH_ASSOC);
+                $parking_nom = $parking ? $parking['nom'] : '';
+
+                // Ajout des informations nécessaires à la session
                 $_SESSION['reservation'] = [
                     'id_parking' => $id_parking,
                     'id_vehicule' => $id_vehicule,
                     'type_contrat' => $type_contrat,
                     'date_debut' => $date_debut,
                     'date_fin' => $date_fin,
-                    'id_place' => $id_place
+                    'id_place' => $id_place,
+                    'montant_p' => calculate_contract_price($type_contrat, $duree),
+                    'vehicule_modele' => $vehicule_modele, // Assurez-vous que cette variable est définie
+                    'parking_nom' => $parking_nom // Assurez-vous que cette variable est définie
                 ];
 
                 // Rediriger vers la page paiement.php
-                header("Location: paiement.php");
+                header("Location: paiement.php?from=contrat");
                 exit();
             } else {
                 $error = "Aucune place disponible dans le parking sélectionné.";

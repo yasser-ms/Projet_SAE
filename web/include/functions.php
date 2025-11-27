@@ -146,17 +146,16 @@ function delete_vehicle($pdo, $id_vehicule) {
 }
 
 function attribuer_place($pdo, $id_parking) {
-    // Rechercher une place disponible dans le parking sélectionné
     $stmt = $pdo->prepare("SELECT id_place FROM place WHERE id_parking = ? AND est_dispo = true LIMIT 1");
     $stmt->execute([$id_parking]);
     $place = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($place) {
-        // Si une place est trouvée, retourner son ID
+        $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
+        $stmt->execute([$place['id_place']]);
         return $place['id_place'];
     }
 
-    // Si aucune place n'est disponible, retourner null
     return null;
 }
 
@@ -251,7 +250,7 @@ function is_penalty_payment($pdo, $id_penalite) {
 // Récupérer les détails d'un contrat
 function get_contract_details($pdo, $id_contrat) {
     $stmt = $pdo->prepare("
-        SELECT c.id_contrat, c.date_debut, c.date_fin, c.type_contrat, c.etat_contrat, p.nom AS parking_nom, v.modele AS vehicule_modele, cl.nom AS client_nom, cl.prenom AS client_prenom
+        SELECT c.id_contrat, c.date_debut, c.date_fin, c.etat_contrat, p.nom AS parking_nom, v.modele AS vehicule_modele, cl.nom AS client_nom, cl.prenom AS client_prenom, pl.id_parking
         FROM contrat c
         JOIN place pl ON c.id_place = pl.id_place
         JOIN parking p ON pl.id_parking = p.id_parking
@@ -269,4 +268,38 @@ function update_card_details($pdo, $user_id, $numero_carte, $date_expiration, $c
 
     $stmt = $pdo->prepare("UPDATE client SET detail_carte = ? WHERE id_client = ?");
     return $stmt->execute([$detail_carte, $user_id]);
+}
+
+function get_user_contracts($pdo, $user_id) {
+    $stmt = $pdo->prepare("
+        SELECT c.id_contrat, c.date_debut, c.date_fin, c.etat_contrat, p.nom AS parking_nom, v.modele AS vehicule_modele
+        FROM contrat c
+        JOIN place pl ON c.id_place = pl.id_place
+        JOIN parking p ON pl.id_parking = p.id_parking
+        JOIN vehicule v ON c.id_vehicule = v.id_vehicule
+        WHERE v.id_client = ?
+    ");
+    $stmt->execute([$user_id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+/**
+ * Calcule le prix d'un contrat en fonction de son type et de sa durée.
+ *
+ * @param string $type_contrat Le type de contrat (ticketHoraire ou abonnement).
+ * @param int $duree La durée du contrat (en heures pour un ticket horaire, en semaines pour un abonnement).
+ * @return float Le prix total du contrat.
+ */
+function calculate_contract_price($type_contrat, $duree) {
+    if ($type_contrat === 'ticketHoraire') {
+        // Prix par heure pour un ticket horaire
+        $prix_par_heure = 1.5;
+        return $duree * $prix_par_heure;
+    } elseif ($type_contrat === 'abonnement') {
+        // Prix par semaine pour un abonnement
+        $prix_par_semaine = 10.0;
+        return $duree * $prix_par_semaine;
+    } else {
+        throw new Exception("Type de contrat invalide.");
+    }
 }

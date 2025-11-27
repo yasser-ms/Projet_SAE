@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $pdo = get_db_connection();
 $user_id = $_SESSION['user_id'];
 
-// Récupérer les pénalités du client connecté
+// Récupérer les pénalités de l'utilisateur connecté
 $penalties = get_user_penalties($pdo, $user_id);
 
 include 'include/header.inc.php';
@@ -37,9 +37,10 @@ include 'include/header.inc.php';
                         <td style="padding: 12px; border: 1px solid #ddd;"><?= htmlspecialchars($penalty['description']) ?></td>
                         <td style="padding: 12px; border: 1px solid #ddd;"><?= htmlspecialchars($penalty['date_creation']) ?></td>
                         <td style="padding: 12px; border: 1px solid #ddd;">
-                            <form method="POST" action="paiement.php">
+                            <form method="POST" action="paiement.php" style="display: inline;">
                                 <input type="hidden" name="id_penalite" value="<?= htmlspecialchars($penalty['id_penalite']) ?>">
                                 <input type="hidden" name="montant_p" value="<?= htmlspecialchars($penalty['montant_p']) ?>">
+                                <input type="hidden" name="from" value="penalite">
                                 <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Régler</button>
                             </form>
                         </td>
@@ -53,3 +54,4 @@ include 'include/header.inc.php';
 </div>
 
 <?php include 'include/footer.inc.php'; ?>
+
