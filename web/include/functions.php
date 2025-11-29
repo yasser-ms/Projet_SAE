@@ -1,4 +1,6 @@
 <?php
+
+
 function generer_id_client($pdo) {
     // On trie par la partie numérique du code
     $stmt = $pdo->prepare("
@@ -298,5 +300,30 @@ function get_vehicle_type($pdo, $id_vehicule) {
     $stmt->execute([$id_vehicule]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row ? $row['type'] : null;
+}
+
+/**
+ * Génère une URL vers une image QR code contenant les informations d'accès au parking.
+ *
+ * @param int $id_parking L'identifiant du parking.
+ * @param int $id_borne L'identifiant de la borne d'entrée.
+ * @param string $id_contrat L'identifiant du contrat.
+ * @return string L'URL de l'image QR code.
+ */
+function generer_qr_code_url($id_parking, $id_borne, $id_contrat) {
+    // Créer une chaîne JSON avec les informations
+    $data = json_encode([
+        'id_parking' => $id_parking,
+        'id_borne' => $id_borne,
+        'id_contrat' => $id_contrat
+    ]);
+
+    // Encoder les données en URL
+    $encoded_data = urlencode($data);
+
+    // URL de l'API QR Code (qrserver.com)
+    $qr_url = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" . $encoded_data;
+
+    return $qr_url;
 }
 

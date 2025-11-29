@@ -105,12 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // --- Cas contrat ---
             } elseif ($is_contract_payment && $reservation) {
 
-                // Validation simple : vérifier que les champs essentiels existent
                 if (empty($reservation['id_vehicule']) || empty($reservation['id_place'])) {
                     $error = "Données de réservation incomplètes.";
                 } else {
                     try {
-                        // On utilise une transaction pour insérer le contrat et mettre la place à jour
                         $pdo->beginTransaction();
 
                         // Générer un nouvel ID pour le contrat
@@ -150,10 +148,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 $duree_totale
                             ]);
                         }
-
                         // Si le contrat est un abonnement
                         elseif ($reservation['type_contrat'] === 'abonnement') {
-                            // Insérer dans la table abonnement
                             $stmt = $pdo->prepare("
                                 INSERT INTO abonnement (id_abonnement, tarif_mensuel, renouvelable) 
                                 VALUES (?, ?, ?)
@@ -169,13 +165,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $stmt = $pdo->prepare("UPDATE place SET est_dispo = false WHERE id_place = ?");
                         $stmt->execute([$reservation['id_place']]);
 
+                        // Récupérer la borne d'entrée du parking (actif)
+                        $stmt = $pdo->prepare("
+                            SELECT id_borne 
+                            FROM borne 
+                            WHERE id_parking = ? 
+                              AND etat = 'active' 
+                              AND type_de_borne = 'entree' 
+                            LIMIT 1
+                        ");
+                        $stmt->execute([$reservation['id_parking']]);
+                        $borne = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        if (!$borne) {
+                            throw new Exception("Aucune borne d'entrée active trouvée pour ce parking.");
+                        }
+
+                        $id_borne = $borne['id_borne'];
+
+                        // Générer l'URL du code QR
+                        $qr_code_url = generer_qr_code_url($reservation['id_parking'], $id_borne, $id_contrat);
+
                         // Commit de la transaction
                         $pdo->commit();
 
-                        // Message de succès
+                        // Message de succès avec le code QR en dessus des détails
                         $success = "
                             <div style='background-color: #d4edda; color: #155724; padding: 20px; border-radius: 8px; border: 1px solid #c3e6cb;'>
                                 <h2 style='margin-top: 0;'>✅ Paiement du contrat effectué avec succès !</h2>
+                                
+                                <!-- Code QR en dessus -->
+                                <div style='text-align: center; margin-bottom: 20px;'>
+                                    <h3>Code QR pour accéder au parking</h3>
+                                    <img src='" . $qr_code_url . "' alt='Code QR' style='width: 250px; height: 250px; border: 2px solid #155724; border-radius: 4px;'>
+                                    <p style='font-size: 12px; color: #666; margin-top: 10px;'>Scannez ce code à l'entrée du parking</p>
+                                </div>
+
+                                <!-- Détails du contrat -->
+                                <hr style='border: none; border-top: 1px solid #155724; margin: 20px 0;'>
+                                
+                                <p><strong>ID du contrat :</strong> " . htmlspecialchars($id_contrat) . "</p>
                                 <p><strong>Montant payé :</strong> " . number_format($reservation['montant_p'] ?? 0, 2, ',', ' ') . " €</p>
                                 <p><strong>Type de contrat :</strong> " . htmlspecialchars(ucfirst($reservation['type_contrat'] ?? '')) . "</p>
                                 <p><strong>Véhicule :</strong> " . htmlspecialchars($reservation['vehicule_modele'] ?? 'Non spécifié') . "</p>
@@ -191,9 +220,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                         ";
 
-
-
-
                         // Supprimer les données de réservation de la session
                         unset($_SESSION['reservation']);
 
@@ -201,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         if ($pdo->inTransaction()) {
                             $pdo->rollBack();
                         }
-                        $error = "Erreur lors de la création du contrat.";
+                        $error = "Erreur lors de la création du contrat : " . $e->getMessage();
                         error_log("Erreur création contrat : " . $e->getMessage());
                     }
                 }
