@@ -1,4 +1,7 @@
 <?php
+/* parametres.php
+   Permet aux utilisateurs de modifier leurs informations personnelles, gérer leurs véhicules et résilier des contrats d'abonnement.
+*/
 session_start();
 require_once 'config/db_config.php';
 require_once 'include/functions.php';

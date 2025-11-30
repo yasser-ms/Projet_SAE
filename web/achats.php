@@ -1,4 +1,7 @@
 <?php
+/* achats.php
+   Gère le processus d'achat de places de parking et de contrats.
+*/
 session_start();
 require_once 'config/db_config.php';
 require_once 'include/functions.php';

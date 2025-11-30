@@ -1,4 +1,8 @@
 <?php
+/* db_config.php
+   Configuration de la connexion à la base de données PostgreSQL.
+*/
+
 require_once __DIR__ . '/../.env.php';
 
 function get_db_connection() {

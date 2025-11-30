@@ -1,4 +1,7 @@
 <?php
+/* dashboard.php
+   Affiche le tableau de bord de l'utilisateur avec ses informations personnelles, son historique et les options disponibles.
+*/
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -33,7 +36,7 @@ include 'include/header.inc.php';
             <p><strong>Prénom :</strong> <?= htmlspecialchars($client['prenom']) ?></p>
             <p><strong>Adresse email :</strong> <?= htmlspecialchars($client['adresse_mail']) ?></p>
             <p><strong>Numéro de téléphone :</strong> <?= htmlspecialchars($client['num_telephone']) ?></p>
-        <?php else: ?>
+      <?php else: ?>
             <p>Impossible de récupérer vos informations personnelles.</p>
         <?php endif; ?>
     </div>
@@ -74,10 +77,10 @@ include 'include/header.inc.php';
     <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 20px;">
         <h3>Options disponibles</h3>
         <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;"><a href="vehicule.php" style="color: #007bff; text-decoration: none; font-weight: bold;">🚗 Gérer mes véhicules</a></li>
-            <li style="margin-bottom: 10px;"><a href="achats.php" style="color: #007bff; text-decoration: none; font-weight: bold;">📋 Mes contrats</a></li>
-            <li style="margin-bottom: 10px;"><a href="penalite.php" style="color: #007bff; text-decoration: none; font-weight: bold;">💳 Régler mes pénalités</a></li>
-            <li style="margin-bottom: 10px;"><a href="parametres.php" style="color: #007bff; text-decoration: none; font-weight: bold;">⚙️ Paramètres</a></li>
+            <li style="margin-bottom: 10px;"><a href="vehicule.php" style="color: #007bff; text-decoration: none; font-weight: bold;">Gérer mes véhicules</a></li>
+            <li style="margin-bottom: 10px;"><a href="achats.php" style="color: #007bff; text-decoration: none; font-weight: bold;">Achats</a></li>
+            <li style="margin-bottom: 10px;"><a href="penalite.php" style="color: #007bff; text-decoration: none; font-weight: bold;">Régler mes pénalités</a></li>
+            <li style="margin-bottom: 10px;"><a href="parametres.php" style="color: #007bff; text-decoration: none; font-weight: bold;">Paramètres</a></li>
         </ul>
     </div>
 </div>

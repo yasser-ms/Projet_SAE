@@ -1,4 +1,8 @@
 <?php
+/* paiement.php
+   Gère le processus de paiement pour les pénalités et les contrats.
+*/
+
 session_start();
 require_once 'config/db_config.php';
 require_once 'include/functions.php';
@@ -80,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // Message de succès
                             $success = "
                                 <div style='background-color: #d4edda; color: #155724; padding: 20px; border-radius: 8px; border: 1px solid #c3e6cb;'>
-                                    <h2 style='margin-top: 0;'>✅ Paiement de la pénalité effectué avec succès !</h2>
+                                    <h2 style='margin-top: 0;'>Paiement de la pénalité effectué avec succès !</h2>
                                     <p><strong>Montant payé :</strong> " . number_format($montant_p, 2, ',', ' ') . " €</p>
                                     <p><strong>Description :</strong> " . htmlspecialchars($penalty['description']) . "</p>
                                     <p><strong>Date de création :</strong> " . htmlspecialchars($penalty['date_creation']) . "</p>
@@ -184,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $id_borne = $borne['id_borne'];
 
                         // Générer l'URL du code QR
-                        $qr_code_url = generer_qr_code_url($reservation['id_parking'], $id_borne, $id_contrat);
+                        $qr_code_url = generer_qr_code_url($reservation['id_parking'], $id_contrat);
 
                         // Commit de la transaction
                         $pdo->commit();
@@ -192,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Message de succès avec le code QR en dessus des détails
                         $success = "
                             <div style='background-color: #d4edda; color: #155724; padding: 20px; border-radius: 8px; border: 1px solid #c3e6cb;'>
-                                <h2 style='margin-top: 0;'>✅ Paiement du contrat effectué avec succès !</h2>
+                                <h2 style='margin-top: 0;'>Paiement du contrat effectué avec succès !</h2>
                                 
                                 <!-- Code QR en dessus -->
                                 <div style='text-align: center; margin-bottom: 20px;'>

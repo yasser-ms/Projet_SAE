@@ -1,4 +1,8 @@
 <?php
+/* penalite.php
+   Affiche les pénalités de l'utilisateur connecté et permet de les régler.
+*/
+
 session_start();
 require_once 'config/db_config.php';
 require_once 'include/functions.php';

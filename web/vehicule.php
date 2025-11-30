@@ -1,4 +1,8 @@
 <?php
+/* vehicule.php
+   Permet aux utilisateurs de gérer leurs véhicules : ajouter, afficher.
+*/
+
 session_start();
 require_once 'config/db_config.php';
 
