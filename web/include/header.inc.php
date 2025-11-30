@@ -23,7 +23,7 @@ $favicon = $root . 'images/parking.png';
     <header class="presentation-header">
         <div class="navbar">
             <a href="<?php echo $root; ?>index.php">
-                <img src="<?php echo $root; ?>images/logo.png" 
+                <img src="<?php echo $root; ?>images/logo.jpeg" 
                 alt="Parking IT" 
                 style="height: 100px; object-fit: contain;">
             </a>
