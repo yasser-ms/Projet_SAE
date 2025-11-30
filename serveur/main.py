@@ -3,7 +3,7 @@ from parking import *
 if __name__ == "__main__":
     print("=== TESTS FONCTIONS DE parking.py ===")
    ## print(scanne_contrat("CT00001","B0001"))
-    print(scanne_contrat("CT00001","B0001"))
+   ## print(scanne_contrat("CT00001","B0001"))
     # test Question 1 et 2 : borne et parking
     
 

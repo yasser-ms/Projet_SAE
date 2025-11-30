@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "/home/yasser/Downloads/javase-3.5.3.jar",
+        "/home/yasser/Downloads/core-3.5.3.jar"
+    ]
+}
