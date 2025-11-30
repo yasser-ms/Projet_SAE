@@ -1,0 +1,359 @@
+2025-11-30 17:58:07,850 - [INFO] - ============================================================
+2025-11-30 17:58:07,850 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 17:58:07,850 - [INFO] - ============================================================
+2025-11-30 17:58:07,850 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 17:58:07,850 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 17:58:07,850 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 17:58:07,850 - [INFO] - Timeout client configure : 10 secondes
+2025-11-30 17:58:07,850 - [INFO] - En attente de connexions clients...
+2025-11-30 17:58:07,850 - [INFO] - ============================================================
+
+2025-11-30 17:58:53,028 - [INFO] - ============================================================
+2025-11-30 17:58:53,029 - [INFO] - Nouvelle connexion depuis 127.0.0.1:50704
+2025-11-30 17:58:53,029 - [INFO] - Timeout defini : 10s pour ce client
+2025-11-30 17:58:53,029 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 17:59:03,039 - [ERROR] - [127.0.0.1] TIMEOUT : Le client n'a pas envoye de donnees dans les 10s
+2025-11-30 17:59:03,039 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 17:59:03,039 - [INFO] - ============================================================
+
+2025-11-30 17:59:49,450 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 17:59:49,450 - [INFO] - ============================================================
+2025-11-30 17:59:49,450 - [INFO] - ARRET DU SERVEUR
+2025-11-30 17:59:49,450 - [INFO] - ============================================================
+2025-11-30 17:59:49,450 - [INFO] - Socket serveur ferme proprement
+2025-11-30 17:59:54,378 - [INFO] - ============================================================
+2025-11-30 17:59:54,378 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 17:59:54,378 - [INFO] - ============================================================
+2025-11-30 17:59:54,378 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 17:59:54,378 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 17:59:54,378 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 17:59:54,378 - [INFO] - Timeout client configure : 10 secondes
+2025-11-30 17:59:54,378 - [INFO] - En attente de connexions clients...
+2025-11-30 17:59:54,378 - [INFO] - ============================================================
+
+2025-11-30 18:00:18,748 - [INFO] - ============================================================
+2025-11-30 18:00:18,748 - [INFO] - Nouvelle connexion depuis 127.0.0.1:51162
+2025-11-30 18:00:18,748 - [INFO] - Timeout defini : 10s pour ce client
+2025-11-30 18:00:18,748 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:00:28,759 - [ERROR] - [127.0.0.1] TIMEOUT : Le client n'a pas envoye de donnees dans les 10s
+2025-11-30 18:00:28,759 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:00:28,760 - [INFO] - ============================================================
+
+2025-11-30 18:01:06,174 - [INFO] - ============================================================
+2025-11-30 18:01:06,174 - [INFO] - Nouvelle connexion depuis 127.0.0.1:56506
+2025-11-30 18:01:06,174 - [INFO] - Timeout defini : 10s pour ce client
+2025-11-30 18:01:06,174 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:01:16,185 - [ERROR] - [127.0.0.1] TIMEOUT : Le client n'a pas envoye de donnees dans les 10s
+2025-11-30 18:01:16,185 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:01:16,185 - [INFO] - ============================================================
+
+2025-11-30 18:01:59,137 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 18:01:59,137 - [INFO] - ============================================================
+2025-11-30 18:01:59,137 - [INFO] - ARRET DU SERVEUR
+2025-11-30 18:01:59,137 - [INFO] - ============================================================
+2025-11-30 18:01:59,137 - [INFO] - Socket serveur ferme proprement
+2025-11-30 18:02:07,421 - [INFO] - ============================================================
+2025-11-30 18:02:07,421 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 18:02:07,421 - [INFO] - ============================================================
+2025-11-30 18:02:07,421 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 18:02:07,421 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 18:02:07,421 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 18:02:07,421 - [INFO] - Timeout client configure : 30 secondes
+2025-11-30 18:02:07,421 - [INFO] - En attente de connexions clients...
+2025-11-30 18:02:07,421 - [INFO] - ============================================================
+
+2025-11-30 18:02:10,801 - [INFO] - ============================================================
+2025-11-30 18:02:10,801 - [INFO] - Nouvelle connexion depuis 127.0.0.1:57194
+2025-11-30 18:02:10,801 - [INFO] - Timeout defini : 30s pour ce client
+2025-11-30 18:02:10,801 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:02:40,826 - [ERROR] - [127.0.0.1] TIMEOUT : Le client n'a pas envoye de donnees dans les 30s
+2025-11-30 18:02:40,826 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:02:40,827 - [INFO] - ============================================================
+
+2025-11-30 18:03:21,966 - [INFO] - ============================================================
+2025-11-30 18:03:21,966 - [INFO] - Nouvelle connexion depuis 127.0.0.1:58350
+2025-11-30 18:03:21,966 - [INFO] - Timeout defini : 30s pour ce client
+2025-11-30 18:03:21,966 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:03:32,674 - [INFO] - [127.0.0.1] Recu : B0001;PK0001
+2025-11-30 18:03:32,674 - [INFO] - [127.0.0.1] Analyse : borne=B0001, parking=PK0001
+2025-11-30 18:03:32,674 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 18:03:32,848 - [INFO] - Borne B0001 validee : active dans le parking PK0001
+2025-11-30 18:03:32,849 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 18:03:32,849 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 18:03:32,852 - [INFO] - [127.0.0.1] ID Contrat recu : CT00001
+2025-11-30 18:03:32,852 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 18:03:32,852 - [INFO] - scanne_contrat appele : contrat=CT00001, borne=B0001
+2025-11-30 18:03:33,039 - [INFO] - Borne B0001 de type ENTREE
+2025-11-30 18:03:33,039 - [INFO] - Traitement ENTREE : contrat=CT00001, borne=B0001
+2025-11-30 18:03:33,383 - [INFO] - Contrat CT00001 valide
+2025-11-30 18:03:33,605 - [INFO] - Contrat CT00001 valide dans les dates
+2025-11-30 18:03:33,818 - [INFO] - Premier scan du contrat CT00001, ajout dans historique
+2025-11-30 18:03:34,032 - [INFO] - Historique ajoute/mis a jour : contrat=CT00001, etat=encours_in
+2025-11-30 18:03:34,032 - [INFO] - Entree autorisee pour contrat CT00001
+2025-11-30 18:03:34,033 - [INFO] - [127.0.0.1] Envoi reponse finale : Contrat actif, accès autorisé
+2025-11-30 18:03:34,033 - [INFO] - [127.0.0.1] Transaction reussie
+2025-11-30 18:03:34,033 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:03:34,034 - [INFO] - ============================================================
+
+2025-11-30 18:06:33,328 - [INFO] - ============================================================
+2025-11-30 18:06:33,328 - [INFO] - Nouvelle connexion depuis 127.0.0.1:45248
+2025-11-30 18:06:33,329 - [INFO] - Timeout defini : 30s pour ce client
+2025-11-30 18:06:33,329 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:06:44,336 - [INFO] - [127.0.0.1] Recu : B0008;PK0003
+2025-11-30 18:06:44,336 - [INFO] - [127.0.0.1] Analyse : borne=B0008, parking=PK0003
+2025-11-30 18:06:44,336 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 18:06:44,976 - [INFO] - Borne B0008 validee : active dans le parking PK0003
+2025-11-30 18:06:44,977 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 18:06:44,977 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 18:06:44,979 - [INFO] - [127.0.0.1] ID Contrat recu : CT00004
+2025-11-30 18:06:44,979 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 18:06:44,980 - [INFO] - scanne_contrat appele : contrat=CT00004, borne=B0008
+2025-11-30 18:06:45,258 - [INFO] - Borne B0008 de type ENTREE
+2025-11-30 18:06:45,259 - [INFO] - Traitement ENTREE : contrat=CT00004, borne=B0008
+2025-11-30 18:06:45,877 - [INFO] - Contrat CT00004 valide
+2025-11-30 18:06:46,530 - [INFO] - Contrat CT00004 valide dans les dates
+2025-11-30 18:06:46,877 - [INFO] - Premier scan du contrat CT00004, ajout dans historique
+2025-11-30 18:06:47,285 - [INFO] - Historique ajoute/mis a jour : contrat=CT00004, etat=encours_in
+2025-11-30 18:06:47,285 - [INFO] - Entree autorisee pour contrat CT00004
+2025-11-30 18:06:47,285 - [INFO] - [127.0.0.1] Envoi reponse finale : Contrat actif, accès autorisé
+2025-11-30 18:06:47,286 - [INFO] - [127.0.0.1] Transaction reussie
+2025-11-30 18:06:47,286 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:06:47,286 - [INFO] - ============================================================
+
+2025-11-30 18:16:32,412 - [INFO] - ============================================================
+2025-11-30 18:16:32,412 - [INFO] - Nouvelle connexion depuis 127.0.0.1:40296
+2025-11-30 18:16:32,412 - [INFO] - Timeout defini : 30s pour ce client
+2025-11-30 18:16:32,412 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:17:02,437 - [ERROR] - [127.0.0.1] TIMEOUT : Le client n'a pas envoye de donnees dans les 30s
+2025-11-30 18:17:02,438 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:17:02,438 - [INFO] - ============================================================
+
+2025-11-30 18:30:26,123 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 18:30:26,123 - [INFO] - ============================================================
+2025-11-30 18:30:26,123 - [INFO] - ARRET DU SERVEUR
+2025-11-30 18:30:26,123 - [INFO] - ============================================================
+2025-11-30 18:30:26,124 - [INFO] - Socket serveur ferme proprement
+2025-11-30 18:40:29,637 - [INFO] - ============================================================
+2025-11-30 18:40:29,637 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 18:40:29,637 - [INFO] - ============================================================
+2025-11-30 18:40:29,637 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 18:40:29,637 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 18:40:29,637 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 18:40:29,638 - [INFO] - Timeout client configure : 180 secondes
+2025-11-30 18:40:29,638 - [INFO] - En attente de connexions clients...
+2025-11-30 18:40:29,638 - [INFO] - ============================================================
+
+2025-11-30 18:40:41,101 - [INFO] - ============================================================
+2025-11-30 18:40:41,102 - [INFO] - Nouvelle connexion depuis 127.0.0.1:39454
+2025-11-30 18:40:41,102 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 18:40:41,102 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 18:40:48,617 - [INFO] - [127.0.0.1] Recu : B0001;PK0001
+2025-11-30 18:40:48,617 - [INFO] - [127.0.0.1] Analyse : borne=B0001, parking=PK0001
+2025-11-30 18:40:48,617 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 18:40:48,874 - [INFO] - Borne B0001 validee : active dans le parking PK0001
+2025-11-30 18:40:48,874 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 18:40:48,874 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 18:40:56,166 - [INFO] - [127.0.0.1] ID Contrat recu : CT00001
+2025-11-30 18:40:56,167 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 18:40:56,167 - [INFO] - scanne_contrat appele : contrat=CT00001, borne=B0001
+2025-11-30 18:40:56,369 - [INFO] - Borne B0001 de type ENTREE
+2025-11-30 18:40:56,370 - [INFO] - Traitement ENTREE : contrat=CT00001, borne=B0001
+2025-11-30 18:40:56,653 - [INFO] - Contrat CT00001 valide
+2025-11-30 18:40:56,829 - [INFO] - Contrat CT00001 valide dans les dates
+2025-11-30 18:40:57,148 - [WARNING] - Contrat CT00001 deja en cours d'entree
+2025-11-30 18:40:57,148 - [INFO] - [127.0.0.1] Envoi reponse finale : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-11-30 18:40:57,149 - [WARNING] - [127.0.0.1] Transaction echouee : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-11-30 18:40:57,149 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 18:40:57,149 - [INFO] - ============================================================
+
+2025-11-30 18:45:01,550 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 18:45:01,550 - [INFO] - ============================================================
+2025-11-30 18:45:01,551 - [INFO] - ARRET DU SERVEUR
+2025-11-30 18:45:01,551 - [INFO] - ============================================================
+2025-11-30 18:45:01,551 - [INFO] - Socket serveur ferme proprement
+2025-11-30 19:07:39,952 - [INFO] - ============================================================
+2025-11-30 19:07:39,952 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 19:07:39,952 - [INFO] - ============================================================
+2025-11-30 19:07:39,952 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 19:07:39,952 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 19:07:39,952 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 19:07:39,952 - [INFO] - Timeout client configure : 180 secondes
+2025-11-30 19:07:39,953 - [INFO] - En attente de connexions clients...
+2025-11-30 19:07:39,953 - [INFO] - ============================================================
+
+2025-11-30 19:07:52,685 - [INFO] - ============================================================
+2025-11-30 19:07:52,685 - [INFO] - Nouvelle connexion depuis 127.0.0.1:46846
+2025-11-30 19:07:52,685 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 19:07:52,685 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 19:08:24,867 - [INFO] - [127.0.0.1] Recu : B0008;PK0003
+2025-11-30 19:08:24,867 - [INFO] - [127.0.0.1] Analyse : borne=B0008, parking=PK0003
+2025-11-30 19:08:24,867 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 19:08:25,226 - [INFO] - Borne B0008 validee : active dans le parking PK0003
+2025-11-30 19:08:25,226 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 19:08:25,227 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 19:08:25,229 - [INFO] - [127.0.0.1] ID Contrat recu : CT00004
+2025-11-30 19:08:25,229 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 19:08:25,229 - [INFO] - scanne_contrat appele : contrat=CT00004, borne=B0008
+2025-11-30 19:08:25,506 - [INFO] - Borne B0008 de type ENTREE
+2025-11-30 19:08:25,506 - [INFO] - Traitement ENTREE : contrat=CT00004, borne=B0008
+2025-11-30 19:08:25,975 - [INFO] - Contrat CT00004 valide
+2025-11-30 19:08:26,237 - [INFO] - Contrat CT00004 valide dans les dates
+2025-11-30 19:08:26,775 - [WARNING] - Contrat CT00004 deja en cours d'entree
+2025-11-30 19:08:26,776 - [INFO] - [127.0.0.1] Envoi reponse finale : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-11-30 19:08:26,776 - [WARNING] - [127.0.0.1] Transaction echouee : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-11-30 19:08:26,776 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 19:08:26,776 - [INFO] - ============================================================
+
+2025-11-30 19:08:40,281 - [INFO] - ============================================================
+2025-11-30 19:08:40,281 - [INFO] - Nouvelle connexion depuis 127.0.0.1:56520
+2025-11-30 19:08:40,281 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 19:08:40,282 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 19:09:05,054 - [INFO] - [127.0.0.1] Recu : B0003;PK0003
+2025-11-30 19:09:05,054 - [INFO] - [127.0.0.1] Analyse : borne=B0003, parking=PK0003
+2025-11-30 19:09:05,054 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 19:09:05,576 - [INFO] - Borne B0003 validee : active dans le parking PK0003
+2025-11-30 19:09:05,576 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 19:09:05,577 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 19:09:05,579 - [INFO] - [127.0.0.1] ID Contrat recu : CT00004
+2025-11-30 19:09:05,580 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 19:09:05,580 - [INFO] - scanne_contrat appele : contrat=CT00004, borne=B0003
+2025-11-30 19:09:05,867 - [INFO] - Borne B0003 de type SORTIE
+2025-11-30 19:09:05,868 - [INFO] - Traitement SORTIE : contrat=CT00004, borne=B0003
+2025-11-30 19:09:06,341 - [INFO] - Contrat CT00004 valide
+2025-11-30 19:09:06,612 - [INFO] - Contrat CT00004 valide dans les dates
+2025-11-30 19:09:07,148 - [INFO] - Contrat CT00004 en cours d'entree, passage en sortie
+2025-11-30 19:09:07,446 - [INFO] - Historique mis a jour : contrat=CT00004, nouvel_etat=encours_out
+2025-11-30 19:09:07,446 - [INFO] - Sortie autorisee pour contrat CT00004
+2025-11-30 19:09:07,447 - [INFO] - [127.0.0.1] Envoi reponse finale : Contrat valide pour sortie
+2025-11-30 19:09:07,447 - [INFO] - [127.0.0.1] Transaction reussie
+2025-11-30 19:09:07,447 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 19:09:07,447 - [INFO] - ============================================================
+
+2025-11-30 19:48:11,350 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 19:48:11,350 - [INFO] - ============================================================
+2025-11-30 19:48:11,350 - [INFO] - ARRET DU SERVEUR
+2025-11-30 19:48:11,350 - [INFO] - ============================================================
+2025-11-30 19:48:11,350 - [INFO] - Socket serveur ferme proprement
+2025-11-30 19:48:13,874 - [INFO] - ============================================================
+2025-11-30 19:48:13,874 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 19:48:13,874 - [INFO] - ============================================================
+2025-11-30 19:48:13,874 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 19:48:13,874 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 19:48:13,874 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 19:48:13,875 - [INFO] - Timeout client configure : 180 secondes
+2025-11-30 19:48:13,875 - [INFO] - En attente de connexions clients...
+2025-11-30 19:48:13,875 - [INFO] - ============================================================
+
+2025-11-30 19:48:21,282 - [INFO] - ============================================================
+2025-11-30 19:48:21,282 - [INFO] - Nouvelle connexion depuis 127.0.0.1:60318
+2025-11-30 19:48:21,282 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 19:48:21,282 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 19:48:39,607 - [INFO] - [127.0.0.1] Recu : B0003;PK0003
+2025-11-30 19:48:39,608 - [INFO] - [127.0.0.1] Analyse : borne=B0003, parking=PK0003
+2025-11-30 19:48:39,608 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 19:48:39,813 - [INFO] - Borne B0003 validee : active dans le parking PK0003
+2025-11-30 19:48:39,813 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 19:48:39,813 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 19:48:39,816 - [INFO] - [127.0.0.1] ID Contrat recu : CT00004
+2025-11-30 19:48:39,816 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 19:48:39,816 - [INFO] - scanne_contrat appele : contrat=CT00004, borne=B0003
+2025-11-30 19:48:40,036 - [INFO] - Borne B0003 de type SORTIE
+2025-11-30 19:48:40,036 - [INFO] - Traitement SORTIE : contrat=CT00004, borne=B0003
+2025-11-30 19:48:40,336 - [INFO] - Contrat CT00004 valide
+2025-11-30 19:48:40,682 - [INFO] - Contrat CT00004 est un ticket horaire
+2025-11-30 19:48:40,682 - [WARNING] - Contrat CT00004 expiré (ticket horaire)
+2025-11-30 19:48:40,683 - [WARNING] - Contrat CT00004 non valide, application de penalite
+2025-11-30 19:48:40,868 - [INFO] - Historique mis a jour : contrat=CT00004, nouvel_etat=delai_depasse
+2025-11-30 19:48:41,050 - [WARNING] - Penalite appliquee pour contrat CT00004 : 2.8 EUR (Retard de 28 minute(s))
+2025-11-30 19:48:41,072 - [INFO] - Penalite PNL0001 inseree dans la BD pour contrat CT00004
+2025-11-30 19:48:41,090 - [INFO] - [127.0.0.1] Envoi reponse finale : ERREUR;Contrat non valide et penalite attribuée
+2025-11-30 19:48:41,090 - [WARNING] - [127.0.0.1] Transaction echouee : ERREUR;Contrat non valide et penalite attribuée
+2025-11-30 19:48:41,090 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 19:48:41,091 - [INFO] - ============================================================
+
+2025-11-30 20:01:00,209 - [INFO] - 
+Interruption utilisateur (Ctrl+C)
+2025-11-30 20:01:00,209 - [INFO] - ============================================================
+2025-11-30 20:01:00,209 - [INFO] - ARRET DU SERVEUR
+2025-11-30 20:01:00,209 - [INFO] - ============================================================
+2025-11-30 20:01:00,209 - [INFO] - Socket serveur ferme proprement
+2025-11-30 20:01:13,213 - [INFO] - ============================================================
+2025-11-30 20:01:13,213 - [INFO] - DEMARRAGE DU SERVEUR PARKING
+2025-11-30 20:01:13,213 - [INFO] - ============================================================
+2025-11-30 20:01:13,213 - [INFO] - Port 8080 recupere depuis les arguments
+2025-11-30 20:01:13,213 - [INFO] - Bind reussi sur 0.0.0.0:8080
+2025-11-30 20:01:13,213 - [INFO] - Serveur en ecoute sur 0.0.0.0:8080
+2025-11-30 20:01:13,213 - [INFO] - Timeout client configure : 180 secondes
+2025-11-30 20:01:13,213 - [INFO] - En attente de connexions clients...
+2025-11-30 20:01:13,213 - [INFO] - ============================================================
+
+2025-11-30 20:01:15,869 - [INFO] - ============================================================
+2025-11-30 20:01:15,869 - [INFO] - Nouvelle connexion depuis 127.0.0.1:34820
+2025-11-30 20:01:15,869 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 20:01:15,869 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 20:01:46,301 - [INFO] - [127.0.0.1] Recu : B001;PK0001
+2025-11-30 20:01:46,301 - [INFO] - [127.0.0.1] Analyse : borne=B001, parking=PK0001
+2025-11-30 20:01:46,301 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 20:01:46,745 - [WARNING] - Borne B001 inconnue pour le parking PK0001
+2025-11-30 20:01:46,746 - [INFO] - [127.0.0.1] Envoi reponse : ERREUR;Borne inconnue pour ce parking
+2025-11-30 20:01:46,747 - [WARNING] - [127.0.0.1] Borne incorrecte, fin de communication
+2025-11-30 20:01:46,748 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 20:01:46,748 - [INFO] - ============================================================
+
+2025-11-30 20:01:55,308 - [INFO] - ============================================================
+2025-11-30 20:01:55,308 - [INFO] - Nouvelle connexion depuis 127.0.0.1:52452
+2025-11-30 20:01:55,308 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 20:01:55,308 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 20:02:06,092 - [INFO] - [127.0.0.1] Recu : B0001;PK0001
+2025-11-30 20:02:06,092 - [INFO] - [127.0.0.1] Analyse : borne=B0001, parking=PK0001
+2025-11-30 20:02:06,092 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 20:02:06,609 - [INFO] - Borne B0001 validee : active dans le parking PK0001
+2025-11-30 20:02:06,609 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 20:02:06,609 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 20:02:06,612 - [INFO] - [127.0.0.1] ID Contrat recu : CT00007
+2025-11-30 20:02:06,612 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 20:02:06,612 - [INFO] - scanne_contrat appele : contrat=CT00007, borne=B0001
+2025-11-30 20:02:06,902 - [INFO] - Borne B0001 de type ENTREE
+2025-11-30 20:02:06,903 - [INFO] - Traitement ENTREE : contrat=CT00007, borne=B0001
+2025-11-30 20:02:07,387 - [INFO] - Contrat CT00007 valide
+2025-11-30 20:02:07,931 - [INFO] - Contrat CT00007 est un ticket horaire
+2025-11-30 20:02:08,203 - [INFO] - Premier scan du contrat CT00007, ajout dans historique
+2025-11-30 20:02:08,513 - [INFO] - Historique ajoute/mis a jour : contrat=CT00007, etat=encours_in
+2025-11-30 20:02:08,513 - [INFO] - Entree autorisee pour contrat CT00007
+2025-11-30 20:02:08,513 - [INFO] - [127.0.0.1] Envoi reponse finale : Contrat actif, accès autorisé
+2025-11-30 20:02:08,514 - [INFO] - [127.0.0.1] Transaction reussie
+2025-11-30 20:02:08,514 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 20:02:08,514 - [INFO] - ============================================================
+
+2025-11-30 20:04:12,318 - [INFO] - ============================================================
+2025-11-30 20:04:12,319 - [INFO] - Nouvelle connexion depuis 127.0.0.1:46826
+2025-11-30 20:04:12,319 - [INFO] - Timeout defini : 180s pour ce client
+2025-11-30 20:04:12,319 - [INFO] - [127.0.0.1] Attente des donnees borne+parking...
+2025-11-30 20:04:47,697 - [INFO] - [127.0.0.1] Recu : B0004;PK0001
+2025-11-30 20:04:47,697 - [INFO] - [127.0.0.1] Analyse : borne=B0004, parking=PK0001
+2025-11-30 20:04:47,697 - [INFO] - [127.0.0.1] Verification borne+parking dans la BD...
+2025-11-30 20:04:48,135 - [INFO] - Borne B0004 validee : active dans le parking PK0001
+2025-11-30 20:04:48,135 - [INFO] - [127.0.0.1] Envoi reponse : Borne reconnue et active dans le parking 
+2025-11-30 20:04:48,135 - [INFO] - [127.0.0.1] Borne validee, attente du contrat...
+2025-11-30 20:04:48,137 - [INFO] - [127.0.0.1] ID Contrat recu : CT00007
+2025-11-30 20:04:48,137 - [INFO] - [127.0.0.1] Verification du contrat dans la BD...
+2025-11-30 20:04:48,137 - [INFO] - scanne_contrat appele : contrat=CT00007, borne=B0004
+2025-11-30 20:04:48,428 - [INFO] - Borne B0004 de type SORTIE
+2025-11-30 20:04:48,429 - [INFO] - Traitement SORTIE : contrat=CT00007, borne=B0004
+2025-11-30 20:04:48,930 - [INFO] - Contrat CT00007 valide
+2025-11-30 20:04:49,521 - [INFO] - Contrat CT00007 est un ticket horaire
+2025-11-30 20:04:49,521 - [WARNING] - Contrat CT00007 expiré (ticket horaire)
+2025-11-30 20:04:49,522 - [WARNING] - Contrat CT00007 non valide, application de penalite
+2025-11-30 20:04:49,843 - [INFO] - Historique mis a jour : contrat=CT00007, nouvel_etat=delai_depasse
+2025-11-30 20:04:50,203 - [WARNING] - Penalite appliquee pour contrat CT00007 : 6.4 EUR (Retard de 64 minute(s))
+2025-11-30 20:04:50,229 - [INFO] - Penalite PNL0001 inseree dans la BD pour contrat CT00007
+2025-11-30 20:04:50,259 - [INFO] - [127.0.0.1] Envoi reponse finale : ERREUR;Contrat non valide et penalite attribuée
+2025-11-30 20:04:50,259 - [WARNING] - [127.0.0.1] Transaction echouee : ERREUR;Contrat non valide et penalite attribuée
+2025-11-30 20:04:50,259 - [INFO] - [127.0.0.1] Connexion fermee
+2025-11-30 20:04:50,259 - [INFO] - ============================================================
+
