@@ -1,3 +1,7 @@
+// Client TCP pour le système de parking
+// Se connecte au serveur, envoie l'ID de la borne et du parking, puis l'ID du contrat
+// Reçoit les réponses et affiche les statuts. Gère les erreurs et timeouts.
+
 package client;
 
 import java.io.BufferedReader;

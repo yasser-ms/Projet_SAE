@@ -1,3 +1,8 @@
+/**
+ * Utilitaire pour décoder un QR Code à partir d'une image.
+ * Lit le fichier image, analyse le QR Code et retourne le texte contenu.
+ */
+
 package client;
 
 import com.google.zxing.*;

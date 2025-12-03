@@ -1,3 +1,12 @@
+"""
+questions_vers_la_bd.py
+
+Contient uniquement des fonctions pour interroger la base de données.
+Ces fonctions effectuent des requêtes SELECT pour récupérer des informations
+comme les contrats, les bornes, les parkings, etc.
+"""
+
+
 import psycopg2
 from db import get_connection
 from datetime import datetime
@@ -79,45 +88,10 @@ def extraire_nombre_vehicules_par_client():
     if not rows:
         return "Aucun client trouvé."
 
-    lignes = [f"{nom} {nb}" for nom, prenom, nb in rows]
+    lignes = [f"{nom} | {nb}" for nom, prenom, nb in rows]
     return "\n".join(lignes)
 
-#QUESTION 4) extraire le nombre de place vide et le nombre de place occuppes dans les parking
-# ...existing code...
-def extraire_places_par_parking():
-    """
-    Retourne une chaîne contenant une ligne par parking au format :
-    NomParking <places_libres> <places_occupees>
-
-    - places_occupees : nombre de places occupées (contrats actifs).
-    - places_libres : nombre de places libres (nbrplace - places_occupees).
-    """
-    conn = get_connection()
-    cur = conn.cursor()
-    query = """
-        SELECT
-			p.nom,
-            p.nbrplace,
-            COALESCE(COUNT(DISTINCT CASE WHEN c.etat_contrat = 'actif' THEN pl.id_place END), 0) AS places_occupees,
-            p.nbrplace - COALESCE(COUNT(DISTINCT CASE WHEN c.etat_contrat = 'actif' THEN pl.id_place END), 0) AS places_libres
-        FROM parking p
-        LEFT JOIN place pl ON pl.id_parking = p.id_parking
-        LEFT JOIN contrat c ON c.id_place = pl.id_place AND c.etat_contrat = 'actif'
-        GROUP BY p.id_parking, p.nom, p.nbrplace
-        ORDER BY p.nom;
-    """
-    cur.execute(query)
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-
-    if not rows:
-        return "Aucun parking trouvé."
-
-    lignes = [f"{nom} {libres} {occupees}" for nom, nbrplace, occupees, libres in rows]
-    return "\n".join(lignes)
-
-#QUESTION 5)  Extraire toute les informations d’un client qui possede un abonnement actif de minimum de 6 mois
+#QUESTION 4)  Extraire toute les informations d’un client qui possede un abonnement actif de minimum de 6 mois
 
 def extraire_clients_abonnement_long():
     """
@@ -160,7 +134,7 @@ def extraire_clients_abonnement_long():
     ]
     return "\n".join(lignes)
 
-#QUESTION 6)  affciher les plus grands tarifs paye par des clients pas moin de 100 euro
+#QUESTION 5)  affciher les plus grands tarifs paye par des clients pas moin de 100 euro
 def extraire_paiements_importants():
     """
     Retourne une chaîne contenant les paiements supérieurs ou égaux à 100 euros,
@@ -203,4 +177,66 @@ def extraire_paiements_importants():
         for id_paiement, id_contrat, montant, id_vehicule, type_vehicule, modele, id_client, nom, prenom in rows
     ]
     return "\n".join(lignes)
-# ...existing code...
+
+# Quetion 6: Quels sont les clients enregistrés qui n'ont encore jamais effectué le moindre paiement?
+
+
+def extraire_clients_sans_paiement():
+    """
+    Retourne une liste de tuples contenant les clients n'ayant effectué aucun paiement,
+    au format : (id_client, nom, prenom)
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+    query = """
+        SELECT id_client, nom, prenom 
+        FROM client 
+        WHERE id_client NOT IN (
+            SELECT DISTINCT id_client 
+            FROM paiement 
+            JOIN contrat USING (id_contrat)
+        );
+    """
+    cur.execute(query)
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+    if not rows:
+        return "Aucun client sans paiement trouvé."
+    
+    lignes = [f"{id_client} | {nom} | {prenom}" for id_client, nom, prenom in rows]
+    return "\n".join(lignes)
+
+
+# Quetion 7 : Qui est le client qui a écopé de la plus grande pénalité ?
+def extraire_client_plus_grande_penalite():
+    """
+    Retourne un tuple contenant le client ayant la plus grande pénalité,
+    au format : (id_client, nom, prenom, montant_p, description)
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+    
+    query = """
+        SELECT c.id_client, c.nom, c.prenom, p.montant_p, p.description
+        FROM client c
+        JOIN vehicule v ON c.id_client = v.id_client
+        JOIN contrat co ON v.id_vehicule = co.id_vehicule
+        JOIN penalite p ON co.id_contrat = p.id_contrat
+        WHERE p.montant_p = (
+            SELECT MAX(montant_p)
+            FROM penalite
+        );
+    """
+    
+    cur.execute(query)
+    row = cur.fetchone()  # On récupère un seul client
+    cur.close()
+    conn.close()
+    
+    if not row:
+        return "Aucun client avec pénalité trouvé."
+    
+    id_client, nom, prenom, montant_p, description = row
+    return f"{id_client} | {nom} | {prenom} | {montant_p} | {description}"
+

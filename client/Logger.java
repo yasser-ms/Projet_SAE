@@ -1,3 +1,8 @@
+/**
+ * Logger utilitaire pour le client Parking.
+ * Permet d'écrire des messages de log dans la console et dans un fichier,
+ * avec différents niveaux (INFO, WARNING, ERROR, DEBUG) et gestion des erreurs réseau.
+ */
 package client;
 
 import java.io.FileWriter;

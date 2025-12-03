@@ -1,3 +1,8 @@
+/**
+ * Fonctions utilitaires pour le client Parking.
+ * Contient la validation IP/port, la saisie d'IDs, la communication avec le serveur,
+ * et la gestion des erreurs et menus interactifs.
+ */
 package client;
 
 import java.io.BufferedReader;

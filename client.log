@@ -1,521 +1,479 @@
-2025-11-30 13:50:25 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:50:25 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 13:50:25 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:50:25 - [INFO] - Mode ligne de commande détecté
-2025-11-30 13:50:25 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 13:50:25 - [DEBUG] - Validation IP : 127.0.0.1 -> OK
-2025-11-30 13:50:25 - [DEBUG] - Validation port : 8080 -> OK
-2025-11-30 13:50:25 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 13:50:25 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 13:50:25 - [INFO] - Connexion établie avec succès.
-2025-11-30 13:50:25 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 13:50:59 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 13:51:06 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 13:51:06 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 13:51:28 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 13:51:33 - [DEBUG] - ID Contrat saisi : CT0001
-2025-11-30 13:51:33 - [INFO] - Données collectées :
-2025-11-30 13:51:33 - [INFO] -   - Borne    : B0001
-2025-11-30 13:51:33 - [INFO] -   - Parking  : PK0001
-2025-11-30 13:51:33 - [INFO] -   - Contrat  : CT0001
-2025-11-30 13:51:33 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 13:51:33 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 13:51:33 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 13:51:33 - [INFO] - Borne validée par le serveur.
-2025-11-30 13:51:33 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 13:51:33 - [INFO] - Envoi au serveur : CT0001
-2025-11-30 13:51:33 - [INFO] - Reponse du serveur : Contrat inconnu
-2025-11-30 13:51:33 - [INFO] - Transaction terminée avec succès.
-2025-11-30 13:51:33 - [INFO] - ════════════════════════════════════
-2025-11-30 13:51:33 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:51:33 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 13:51:33 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:38:57 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:38:57 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:38:57 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:38:57 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:38:57 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:38:57 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:38:57 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:38:57 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:38:57 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:39:01 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:39:03 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:39:03 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:39:13 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
+2025-12-03 08:39:13 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
+2025-12-03 08:39:13 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
+2025-12-03 08:39:14 - [INFO] - QR Code decode avec succes : PK0003;CT00004
+2025-12-03 08:39:14 - [DEBUG] - ID Parking extrait : PK0003
+2025-12-03 08:39:14 - [DEBUG] - ID Contrat extrait : CT00004
+2025-12-03 08:39:14 - [INFO] - Données collectées :
+2025-12-03 08:39:14 - [INFO] -   - Borne    : B0001
+2025-12-03 08:39:14 - [INFO] -   - Parking  : PK0003
+2025-12-03 08:39:14 - [INFO] -   - Contrat  : CT00004
+2025-12-03 08:39:14 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:39:14 - [INFO] - Envoi au serveur : B0001;PK0003
+2025-12-03 08:39:27 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking
+2025-12-03 08:39:27 - [INFO] - Borne validée par le serveur.
+2025-12-03 08:39:27 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 08:39:27 - [INFO] - Envoi au serveur : CT00004
+2025-12-03 08:39:48 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
+2025-12-03 08:39:48 - [INFO] - Transaction terminée avec succès.
+2025-12-03 08:39:48 - [INFO] - ════════════════════════════════════
+2025-12-03 08:39:48 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:39:48 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 08:39:48 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 13:51:58 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:51:58 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 13:51:58 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:51:58 - [INFO] - Mode ligne de commande détecté
-2025-11-30 13:51:58 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 13:51:58 - [DEBUG] - Validation IP : 127.0.0.1 -> OK
-2025-11-30 13:51:58 - [DEBUG] - Validation port : 8080 -> OK
-2025-11-30 13:51:58 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 13:51:58 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 13:51:58 - [INFO] - Connexion établie avec succès.
-2025-11-30 13:51:58 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 13:52:00 - [DEBUG] - ID Borne saisi : kjsdgf
-2025-11-30 13:52:02 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 13:52:02 - [INFO] - Mode QR Code sélectionné
-2025-11-30 13:52:04 - [DEBUG] - Chemin recu via saisie : ksjqdfh
-2025-11-30 13:52:04 - [INFO] - Lecture du QR Code : ksjqdfh
-2025-11-30 13:52:04 - [ERROR] - Le fichier n'existe pas : ksjqdfh
-2025-11-30 13:52:04 - [ERROR] - Impossible de récupérer les IDs
-2025-11-30 13:52:04 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:52:04 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 13:52:04 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:41:10 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:41:10 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:41:10 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:41:10 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:41:10 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:41:10 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:41:10 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:41:10 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:41:10 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:41:15 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:41:21 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:41:21 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:41:27 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
+2025-12-03 08:41:27 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
+2025-12-03 08:41:27 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
+2025-12-03 08:41:28 - [INFO] - QR Code decode avec succes : PK0003;CT00004
+2025-12-03 08:41:28 - [DEBUG] - ID Parking extrait : PK0003
+2025-12-03 08:41:28 - [DEBUG] - ID Contrat extrait : CT00004
+2025-12-03 08:41:28 - [INFO] - Données collectées :
+2025-12-03 08:41:28 - [INFO] -   - Borne    : B0001
+2025-12-03 08:41:28 - [INFO] -   - Parking  : PK0003
+2025-12-03 08:41:28 - [INFO] -   - Contrat  : CT00004
+2025-12-03 08:41:28 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:41:28 - [INFO] - Envoi au serveur : B0001;PK0003
+2025-12-03 08:41:39 - [INFO] - Reponse du serveur :  Borne reconnue et active dans le parking
+2025-12-03 08:41:39 - [INFO] - Borne validée par le serveur.
+2025-12-03 08:41:39 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 08:41:39 - [INFO] - Envoi au serveur : CT00004
+2025-12-03 08:41:58 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
+2025-12-03 08:41:58 - [INFO] - Transaction terminée avec succès.
+2025-12-03 08:41:58 - [INFO] - ════════════════════════════════════
+2025-12-03 08:41:58 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:41:58 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 08:41:58 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 13:52:31 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:52:31 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 13:52:31 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:52:31 - [INFO] - Mode ligne de commande détecté
-2025-11-30 13:52:31 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=808
-2025-11-30 13:52:31 - [DEBUG] - Validation IP : 127.0.0.1 -> OK
-2025-11-30 13:52:31 - [DEBUG] - Validation port : 808 -> OK
-2025-11-30 13:52:31 - [INFO] - Configuration : 127.0.0.1:808
-2025-11-30 13:52:31 - [INFO] - Tentative de connexion à 127.0.0.1:808...
-2025-11-30 13:52:31 - [ERROR] - =======================================
-2025-11-30 13:52:31 - [ERROR] - ERREUR RÉSEAU : IMPOSSIBLE DE SE CONNECTER
-2025-11-30 13:52:31 - [ERROR] - ---------------------------------------
-2025-11-30 13:52:31 - [ERROR] - Le serveur n'est pas démarré sur le port 808
-2025-11-30 13:52:31 - [ERROR] - Détails technique : Connection refused
-2025-11-30 13:52:31 - [ERROR] - =======================================
-2025-11-30 13:53:10 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:53:10 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 13:53:10 - [INFO] - ════════════════════════════════════════
-2025-11-30 13:53:10 - [INFO] - Mode ligne de commande détecté
-2025-11-30 13:53:10 - [INFO] - Arguments reçus : IP=127.0.0.2, PORT=8080
-2025-11-30 13:53:10 - [WARNING] - Validation IP : 127.0.0.2 -> REFUSE (seul localhost autorisé)
-2025-11-30 13:53:10 - [ERROR] - Seule l'adresse 127.0.0.1 (localhost) est autorisée !
-2025-11-30 13:53:10 - [INFO] - Arret du client...
-2025-11-30 16:36:06 - [INFO] - ════════════════════════════════════════
-2025-11-30 16:36:06 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 16:36:06 - [INFO] - ════════════════════════════════════════
-2025-11-30 16:36:06 - [INFO] - Mode ligne de commande détecté
-2025-11-30 16:36:06 - [INFO] - Arguments reçus : IP=127.0.0.2, PORT=8080
-2025-11-30 16:36:06 - [ERROR] - Seule l'adresse 127.0.0.1 (localhost) est autorisée !
-2025-11-30 16:36:06 - [INFO] - Arret du client...
-2025-11-30 16:36:20 - [INFO] - ════════════════════════════════════════
-2025-11-30 16:36:20 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 16:36:20 - [INFO] - ════════════════════════════════════════
-2025-11-30 16:36:20 - [INFO] - Mode ligne de commande détecté
-2025-11-30 16:36:20 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 16:36:20 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 16:36:20 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 16:36:20 - [INFO] - Connexion établie avec succès.
-2025-11-30 16:36:20 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 16:37:58 - [DEBUG] - ID Borne saisi : B0005
-2025-11-30 16:38:04 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 16:38:04 - [INFO] - Mode QR Code sélectionné
-2025-11-30 16:38:25 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/v1_create-qr-code_.png'
-2025-11-30 16:38:25 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/v1_create-qr-code_.png'' -> '/home/yasser/Downloads/v1_create-qr-code_.png'
-2025-11-30 16:38:25 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/v1_create-qr-code_.png
-2025-11-30 16:38:25 - [INFO] - QR Code decode avec succes : PK0002;CT00002
-2025-11-30 16:38:25 - [DEBUG] - ID Parking extrait : PK0002
-2025-11-30 16:38:25 - [DEBUG] - ID Contrat extrait : CT00002
-2025-11-30 16:38:25 - [INFO] - Données collectées :
-2025-11-30 16:38:25 - [INFO] -   - Borne    : B0005
-2025-11-30 16:38:25 - [INFO] -   - Parking  : PK0002
-2025-11-30 16:38:25 - [INFO] -   - Contrat  : CT00002
-2025-11-30 16:38:25 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 16:38:25 - [INFO] - Envoi au serveur : B0005;PK0002
-2025-11-30 16:38:25 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 16:38:25 - [INFO] - Borne validée par le serveur.
-2025-11-30 16:38:25 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 16:38:25 - [INFO] - Envoi au serveur : CT00002
-2025-11-30 16:38:26 - [INFO] - Reponse du serveur : ERREUR;Contrat non valide (expiré ou n'est pas encore valable)
-2025-11-30 16:38:26 - [ERROR] - Erreur lors de la validation du contrat : ERREUR;Contrat non valide (expiré ou n'est pas encore valable)
-2025-11-30 16:38:26 - [INFO] - ════════════════════════════════════
-2025-11-30 16:38:26 - [INFO] - ════════════════════════════════════════
-2025-11-30 16:38:26 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 16:38:26 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:43:26 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:43:26 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:43:26 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:43:26 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:43:26 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:43:26 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:43:26 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:43:26 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:43:26 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:43:29 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:43:31 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:43:31 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:43:42 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/v1_create-qr-code_.png'
+2025-12-03 08:43:42 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/v1_create-qr-code_.png'' -> '/home/yasser/Downloads/v1_create-qr-code_.png'
+2025-12-03 08:43:42 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/v1_create-qr-code_.png
+2025-12-03 08:43:42 - [INFO] - QR Code decode avec succes : PK0002;CT00002
+2025-12-03 08:43:42 - [DEBUG] - ID Parking extrait : PK0002
+2025-12-03 08:43:42 - [DEBUG] - ID Contrat extrait : CT00002
+2025-12-03 08:43:42 - [INFO] - Données collectées :
+2025-12-03 08:43:42 - [INFO] -   - Borne    : B0001
+2025-12-03 08:43:42 - [INFO] -   - Parking  : PK0002
+2025-12-03 08:43:42 - [INFO] -   - Contrat  : CT00002
+2025-12-03 08:43:42 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:43:42 - [INFO] - Envoi au serveur : B0001;PK0002
+2025-12-03 08:44:00 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:00 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:44:00 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:00 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:44:00 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:44:00 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:44:00 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:44:00 - [ERROR] - ===========================================
+2025-12-03 08:44:00 - [ERROR] - ERREUR RESEAU : IMPOSSIBLE DE SE CONNECTER
+2025-12-03 08:44:00 - [ERROR] - -------------------------------------------
+2025-12-03 08:44:00 - [ERROR] - Le serveur n'est pas démarré sur le port 8080
+2025-12-03 08:44:00 - [ERROR] - Details technique : Connection refused
+2025-12-03 08:44:00 - [ERROR] - ===========================================
+2025-12-03 08:44:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:25 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:44:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:25 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:44:25 - [INFO] - Arguments reçus : IP=0.0.0.0, PORT=8080
+2025-12-03 08:44:25 - [ERROR] - Seule l'adresse 127.0.0.1 (localhost) est autorisée !
+2025-12-03 08:44:25 - [INFO] - Arret du client...
+2025-12-03 08:44:58 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:58 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:44:58 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:44:58 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:44:58 - [INFO] - Arguments reçus : IP=0.0.0.0, PORT=8080
+2025-12-03 08:44:58 - [ERROR] - Seule l'adresse 127.0.0.1 (localhost) est autorisée !
+2025-12-03 08:44:58 - [INFO] - Arret du client...
+2025-12-03 08:45:04 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:04 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:45:04 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:04 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:45:04 - [INFO] - Arguments reçus : IP=0.0.0.0, PORT=8080
+2025-12-03 08:45:04 - [ERROR] - Seule l'adresse 127.0.0.1 (localhost) est autorisée !
+2025-12-03 08:45:04 - [INFO] - Arret du client...
+2025-12-03 08:45:11 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:11 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:45:11 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:11 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:45:11 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:45:11 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:45:11 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:45:11 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:45:11 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:45:14 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:45:15 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:45:15 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:45:24 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/qr-code.png'
+2025-12-03 08:45:24 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/qr-code.png'' -> '/home/yasser/Downloads/qr-code.png'
+2025-12-03 08:45:24 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/qr-code.png
+2025-12-03 08:45:24 - [INFO] - QR Code decode avec succes : PK0003;CT00061
+2025-12-03 08:45:24 - [DEBUG] - ID Parking extrait : PK0003
+2025-12-03 08:45:24 - [DEBUG] - ID Contrat extrait : CT00061
+2025-12-03 08:45:24 - [INFO] - Données collectées :
+2025-12-03 08:45:24 - [INFO] -   - Borne    : B0001
+2025-12-03 08:45:24 - [INFO] -   - Parking  : PK0003
+2025-12-03 08:45:24 - [INFO] -   - Contrat  : CT00061
+2025-12-03 08:45:24 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:45:24 - [INFO] - Envoi au serveur : B0001;PK0003
+2025-12-03 08:45:33 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:33 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:45:33 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:33 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:45:33 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:45:33 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:45:33 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:45:33 - [ERROR] - ===========================================
+2025-12-03 08:45:33 - [ERROR] - ERREUR RESEAU : IMPOSSIBLE DE SE CONNECTER
+2025-12-03 08:45:33 - [ERROR] - -------------------------------------------
+2025-12-03 08:45:33 - [ERROR] - Le serveur n'est pas démarré sur le port 8080
+2025-12-03 08:45:33 - [ERROR] - Details technique : Connection refused
+2025-12-03 08:45:33 - [ERROR] - ===========================================
+2025-12-03 08:45:38 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:38 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:45:38 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:45:38 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:45:38 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:45:38 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:45:38 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:45:38 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:45:38 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:45:40 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:45:42 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:45:42 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:45:47 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/QR-CODE.png'
+2025-12-03 08:45:47 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/QR-CODE.png'' -> '/home/yasser/Downloads/QR-CODE.png'
+2025-12-03 08:45:47 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/QR-CODE.png
+2025-12-03 08:45:47 - [INFO] - QR Code decode avec succes : PK0001;CT00060
+2025-12-03 08:45:47 - [DEBUG] - ID Parking extrait : PK0001
+2025-12-03 08:45:47 - [DEBUG] - ID Contrat extrait : CT00060
+2025-12-03 08:45:47 - [INFO] - Données collectées :
+2025-12-03 08:45:47 - [INFO] -   - Borne    : B0001
+2025-12-03 08:45:47 - [INFO] -   - Parking  : PK0001
+2025-12-03 08:45:47 - [INFO] -   - Contrat  : CT00060
+2025-12-03 08:45:47 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:45:47 - [INFO] - Envoi au serveur : B0001;PK0001
+2025-12-03 08:48:05 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:48:05 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:48:05 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:48:05 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:48:05 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:48:05 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:48:05 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:48:05 - [ERROR] - ===========================================
+2025-12-03 08:48:05 - [ERROR] - ERREUR RESEAU : IMPOSSIBLE DE SE CONNECTER
+2025-12-03 08:48:05 - [ERROR] - -------------------------------------------
+2025-12-03 08:48:05 - [ERROR] - Le serveur n'est pas démarré sur le port 8080
+2025-12-03 08:48:05 - [ERROR] - Details technique : Connection refused
+2025-12-03 08:48:05 - [ERROR] - ===========================================
+2025-12-03 08:49:05 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:49:05 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 08:49:05 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:49:05 - [INFO] - Mode ligne de commande détecté
+2025-12-03 08:49:05 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 08:49:05 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 08:49:05 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 08:49:05 - [INFO] - Connexion établie avec succès.
+2025-12-03 08:49:05 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 08:49:11 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 08:49:13 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 08:49:13 - [INFO] - Mode QR Code sélectionné
+2025-12-03 08:49:24 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/QR-CODE.png'
+2025-12-03 08:49:24 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/QR-CODE.png'' -> '/home/yasser/Downloads/QR-CODE.png'
+2025-12-03 08:49:24 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/QR-CODE.png
+2025-12-03 08:49:25 - [INFO] - QR Code decode avec succes : PK0001;CT00060
+2025-12-03 08:49:25 - [DEBUG] - ID Parking extrait : PK0001
+2025-12-03 08:49:25 - [DEBUG] - ID Contrat extrait : CT00060
+2025-12-03 08:49:25 - [INFO] - Données collectées :
+2025-12-03 08:49:25 - [INFO] -   - Borne    : B0001
+2025-12-03 08:49:25 - [INFO] -   - Parking  : PK0001
+2025-12-03 08:49:25 - [INFO] -   - Contrat  : CT00060
+2025-12-03 08:49:25 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 08:49:25 - [INFO] - Envoi au serveur : B0001;PK0001
+2025-12-03 08:49:40 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking
+2025-12-03 08:49:40 - [INFO] - Borne validée par le serveur.
+2025-12-03 08:49:40 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 08:49:40 - [INFO] - Envoi au serveur : CT00060
+2025-12-03 08:49:54 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
+2025-12-03 08:49:54 - [INFO] - Transaction terminée avec succès.
+2025-12-03 08:49:54 - [INFO] - ════════════════════════════════════
+2025-12-03 08:49:54 - [INFO] - ════════════════════════════════════════
+2025-12-03 08:49:54 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 08:49:54 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 17:58:52 - [INFO] - ════════════════════════════════════════
-2025-11-30 17:58:52 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 17:58:52 - [INFO] - ════════════════════════════════════════
-2025-11-30 17:58:52 - [INFO] - Mode ligne de commande détecté
-2025-11-30 17:58:52 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 17:58:53 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 17:58:53 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 17:58:53 - [INFO] - Connexion établie avec succès.
-2025-11-30 17:58:53 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:00:18 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:00:18 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:00:18 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:00:18 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:00:18 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:00:18 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:00:18 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:00:18 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:00:18 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:01:06 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:01:06 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:01:06 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:01:06 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:01:06 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:01:06 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:01:06 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:01:06 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:01:06 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:01:11 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 18:01:13 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 18:01:13 - [INFO] - Mode QR Code sélectionné
-2025-11-30 18:01:25 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/v1_create-qr-code_.png'
-2025-11-30 18:01:25 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/v1_create-qr-code_.png'' -> '/home/yasser/Downloads/v1_create-qr-code_.png'
-2025-11-30 18:01:25 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/v1_create-qr-code_.png
-2025-11-30 18:01:25 - [INFO] - QR Code decode avec succes : PK0002;CT00002
-2025-11-30 18:01:25 - [DEBUG] - ID Parking extrait : PK0002
-2025-11-30 18:01:25 - [DEBUG] - ID Contrat extrait : CT00002
-2025-11-30 18:01:25 - [INFO] - Données collectées :
-2025-11-30 18:01:25 - [INFO] -   - Borne    : B0001
-2025-11-30 18:01:25 - [INFO] -   - Parking  : PK0002
-2025-11-30 18:01:25 - [INFO] -   - Contrat  : CT00002
-2025-11-30 18:01:25 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:01:25 - [INFO] - Envoi au serveur : B0001;PK0002
-2025-11-30 18:01:25 - [INFO] - Reponse du serveur : ERREUR;TIMEOUT_SERVEUR
-2025-11-30 18:01:25 - [ERROR] - Erreur détectée : ERREUR;TIMEOUT_SERVEUR
-2025-11-30 18:01:25 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:01:25 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 18:01:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:06:58 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:06:58 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:06:58 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:06:58 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:06:58 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:06:58 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:06:58 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:06:58 - [ERROR] - ===========================================
+2025-12-03 09:06:58 - [ERROR] - ERREUR RESEAU : IMPOSSIBLE DE SE CONNECTER
+2025-12-03 09:06:58 - [ERROR] - -------------------------------------------
+2025-12-03 09:06:58 - [ERROR] - Le serveur n'est pas démarré sur le port 8080
+2025-12-03 09:06:58 - [ERROR] - Details technique : Connection refused
+2025-12-03 09:06:58 - [ERROR] - ===========================================
+2025-12-03 09:07:16 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:07:16 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:07:16 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:07:16 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:07:16 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:07:16 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:07:16 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:07:16 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:07:16 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:07:21 - [DEBUG] - ID Borne saisi : B0003
+2025-12-03 09:07:25 - [DEBUG] - Choix utilisateur : 1
+2025-12-03 09:07:25 - [INFO] - Mode QR Code sélectionné
+2025-12-03 09:07:33 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/qr-code.png'
+2025-12-03 09:07:33 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/qr-code.png'' -> '/home/yasser/Downloads/qr-code.png'
+2025-12-03 09:07:33 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/qr-code.png
+2025-12-03 09:07:33 - [INFO] - QR Code decode avec succes : PK0003;CT00061
+2025-12-03 09:07:33 - [DEBUG] - ID Parking extrait : PK0003
+2025-12-03 09:07:33 - [DEBUG] - ID Contrat extrait : CT00061
+2025-12-03 09:07:33 - [INFO] - Données collectées :
+2025-12-03 09:07:33 - [INFO] -   - Borne    : B0003
+2025-12-03 09:07:33 - [INFO] -   - Parking  : PK0003
+2025-12-03 09:07:33 - [INFO] -   - Contrat  : CT00061
+2025-12-03 09:07:33 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:07:33 - [INFO] - Envoi au serveur : B0003;PK0003
+2025-12-03 09:07:33 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:07:33 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:07:33 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:07:33 - [INFO] - Envoi au serveur : CT00061
+2025-12-03 09:07:33 - [INFO] - Reponse du serveur : Contrat inconnu
+2025-12-03 09:07:33 - [INFO] - Transaction terminée avec succès.
+2025-12-03 09:07:33 - [INFO] - ════════════════════════════════════
+2025-12-03 09:07:33 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:07:33 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:07:33 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 18:02:10 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:02:10 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:02:10 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:02:10 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:02:10 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:02:10 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:02:10 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:02:10 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:02:10 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:03:21 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:03:21 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:03:21 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:03:21 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:03:21 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:03:21 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:03:21 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:03:21 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:03:21 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:03:24 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 18:03:26 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 18:03:26 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 18:03:29 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 18:03:32 - [DEBUG] - ID Contrat saisi : CT00001
-2025-11-30 18:03:32 - [INFO] - Données collectées :
-2025-11-30 18:03:32 - [INFO] -   - Borne    : B0001
-2025-11-30 18:03:32 - [INFO] -   - Parking  : PK0001
-2025-11-30 18:03:32 - [INFO] -   - Contrat  : CT00001
-2025-11-30 18:03:32 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:03:32 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 18:03:32 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 18:03:32 - [INFO] - Borne validée par le serveur.
-2025-11-30 18:03:32 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 18:03:32 - [INFO] - Envoi au serveur : CT00001
-2025-11-30 18:03:34 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
-2025-11-30 18:03:34 - [INFO] - Transaction terminée avec succès.
-2025-11-30 18:03:34 - [INFO] - ════════════════════════════════════
-2025-11-30 18:03:34 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:03:34 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 18:03:34 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:08:36 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:08:36 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:08:36 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:08:36 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:08:36 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:08:36 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:08:36 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:08:36 - [ERROR] - ===========================================
+2025-12-03 09:08:36 - [ERROR] - ERREUR RESEAU : IMPOSSIBLE DE SE CONNECTER
+2025-12-03 09:08:36 - [ERROR] - -------------------------------------------
+2025-12-03 09:08:36 - [ERROR] - Le serveur n'est pas démarré sur le port 8080
+2025-12-03 09:08:36 - [ERROR] - Details technique : Connection refused
+2025-12-03 09:08:36 - [ERROR] - ===========================================
+2025-12-03 09:10:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:10:25 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:10:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:10:25 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:10:25 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:10:25 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:10:25 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:10:25 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:10:25 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:10:30 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 09:10:33 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:10:33 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:10:37 - [DEBUG] - ID Parking saisi : PK0001
+2025-12-03 09:10:41 - [DEBUG] - ID Contrat saisi : CT00001
+2025-12-03 09:10:41 - [INFO] - Données collectées :
+2025-12-03 09:10:41 - [INFO] -   - Borne    : B0001
+2025-12-03 09:10:41 - [INFO] -   - Parking  : PK0001
+2025-12-03 09:10:41 - [INFO] -   - Contrat  : CT00001
+2025-12-03 09:10:41 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:10:41 - [INFO] - Envoi au serveur : B0001;PK0001
+2025-12-03 09:10:42 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:10:42 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:10:42 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:10:42 - [INFO] - Envoi au serveur : CT00001
+2025-12-03 09:10:42 - [INFO] - Reponse du serveur : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-12-03 09:10:42 - [ERROR] - Erreur lors de la validation du contrat : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
+2025-12-03 09:10:42 - [INFO] - ════════════════════════════════════
+2025-12-03 09:10:42 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:10:42 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:10:42 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 18:06:33 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:06:33 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:06:33 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:06:33 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:06:33 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:06:33 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:06:33 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:06:33 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:06:33 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:06:37 - [DEBUG] - ID Borne saisi : B0008
-2025-11-30 18:06:38 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 18:06:38 - [INFO] - Mode QR Code sélectionné
-2025-11-30 18:06:44 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
-2025-11-30 18:06:44 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
-2025-11-30 18:06:44 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
-2025-11-30 18:06:44 - [INFO] - QR Code decode avec succes : PK0003;CT00004
-2025-11-30 18:06:44 - [DEBUG] - ID Parking extrait : PK0003
-2025-11-30 18:06:44 - [DEBUG] - ID Contrat extrait : CT00004
-2025-11-30 18:06:44 - [INFO] - Données collectées :
-2025-11-30 18:06:44 - [INFO] -   - Borne    : B0008
-2025-11-30 18:06:44 - [INFO] -   - Parking  : PK0003
-2025-11-30 18:06:44 - [INFO] -   - Contrat  : CT00004
-2025-11-30 18:06:44 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:06:44 - [INFO] - Envoi au serveur : B0008;PK0003
-2025-11-30 18:06:44 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 18:06:44 - [INFO] - Borne validée par le serveur.
-2025-11-30 18:06:44 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 18:06:44 - [INFO] - Envoi au serveur : CT00004
-2025-11-30 18:06:47 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
-2025-11-30 18:06:47 - [INFO] - Transaction terminée avec succès.
-2025-11-30 18:06:47 - [INFO] - ════════════════════════════════════
-2025-11-30 18:06:47 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:06:47 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 18:06:47 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:11:13 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:11:13 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:11:13 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:11:13 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:11:13 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:11:13 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:11:13 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:11:13 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:11:13 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:11:17 - [DEBUG] - ID Borne saisi : B0004
+2025-12-03 09:11:21 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:11:21 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:11:25 - [DEBUG] - ID Parking saisi : PK0001
+2025-12-03 09:11:29 - [DEBUG] - ID Contrat saisi : CT00001
+2025-12-03 09:11:29 - [INFO] - Données collectées :
+2025-12-03 09:11:29 - [INFO] -   - Borne    : B0004
+2025-12-03 09:11:29 - [INFO] -   - Parking  : PK0001
+2025-12-03 09:11:29 - [INFO] -   - Contrat  : CT00001
+2025-12-03 09:11:29 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:11:29 - [INFO] - Envoi au serveur : B0004;PK0001
+2025-12-03 09:11:29 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:11:29 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:11:29 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:11:29 - [INFO] - Envoi au serveur : CT00001
+2025-12-03 09:11:30 - [INFO] - Reponse du serveur : Contrat valide pour sortie
+2025-12-03 09:11:30 - [INFO] - Transaction terminée avec succès.
+2025-12-03 09:11:30 - [INFO] - ════════════════════════════════════
+2025-12-03 09:11:30 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:11:30 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:11:30 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 18:16:32 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:16:32 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:16:32 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:16:32 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:16:32 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:16:32 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:16:32 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:16:32 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:16:32 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:16:54 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 18:16:59 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 18:16:59 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 18:17:02 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 18:17:08 - [DEBUG] - ID Contrat saisi : CT00001
-2025-11-30 18:17:08 - [INFO] - Données collectées :
-2025-11-30 18:17:08 - [INFO] -   - Borne    : B0001
-2025-11-30 18:17:08 - [INFO] -   - Parking  : PK0001
-2025-11-30 18:17:08 - [INFO] -   - Contrat  : CT00001
-2025-11-30 18:17:08 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:17:08 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 18:17:08 - [INFO] - Reponse du serveur : ERREUR;TIMEOUT_SERVEUR
-2025-11-30 18:17:08 - [ERROR] - Erreur détectée : ERREUR;TIMEOUT_SERVEUR
-2025-11-30 18:17:08 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:17:08 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 18:17:08 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:16 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:16 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:12:16 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:16 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:12:16 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:12:16 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:12:16 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:12:16 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:12:16 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:12:18 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 09:12:20 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:12:20 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:12:24 - [DEBUG] - ID Parking saisi : PK00001
+2025-12-03 09:12:30 - [DEBUG] - ID Contrat saisi : VT00001
+2025-12-03 09:12:30 - [INFO] - Données collectées :
+2025-12-03 09:12:30 - [INFO] -   - Borne    : B0001
+2025-12-03 09:12:30 - [INFO] -   - Parking  : PK00001
+2025-12-03 09:12:30 - [INFO] -   - Contrat  : VT00001
+2025-12-03 09:12:30 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:12:30 - [INFO] - Envoi au serveur : B0001;PK00001
+2025-12-03 09:12:30 - [INFO] - Reponse du serveur : ERREUR;Borne inconnue pour ce parking
+2025-12-03 09:12:30 - [ERROR] - Erreur détectée : ERREUR;Borne inconnue pour ce parking
+2025-12-03 09:12:30 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:30 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:12:30 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 18:31:32 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:31:32 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:31:32 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:31:32 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:31:32 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:31:32 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:31:32 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:31:32 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:31:32 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:31:36 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 18:31:44 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 18:31:44 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 18:31:47 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 18:31:50 - [DEBUG] - ID Contrat saisi : CT00001
-2025-11-30 18:31:50 - [INFO] - Données collectées :
-2025-11-30 18:31:50 - [INFO] -   - Borne    : B0001
-2025-11-30 18:31:50 - [INFO] -   - Parking  : PK0001
-2025-11-30 18:31:50 - [INFO] -   - Contrat  : CT00001
-2025-11-30 18:31:50 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:31:50 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 18:31:55 - [ERROR] - ===========================================
-2025-11-30 18:31:55 - [ERROR] - ERREUR RESEAU : ERREUR DE RECEPTION
-2025-11-30 18:31:55 - [ERROR] - -------------------------------------------
-2025-11-30 18:31:55 - [ERROR] - Impossible de lire la reponse du serveur.
-La connexion a ete interrompue.
-2025-11-30 18:31:55 - [ERROR] - Details technique : Read timed out
-2025-11-30 18:31:55 - [ERROR] - ===========================================
-2025-11-30 18:31:55 - [INFO] - Arret du client...
-2025-11-30 18:32:39 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:32:39 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 18:32:39 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:32:39 - [INFO] - Mode ligne de commande détecté
-2025-11-30 18:32:39 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 18:32:39 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 18:32:39 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 18:32:39 - [INFO] - Connexion établie avec succès.
-2025-11-30 18:32:39 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 18:32:42 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 18:32:44 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 18:32:44 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 18:32:47 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 18:32:52 - [DEBUG] - ID Contrat saisi : CT00001
-2025-11-30 18:32:52 - [INFO] - Données collectées :
-2025-11-30 18:32:52 - [INFO] -   - Borne    : B0001
-2025-11-30 18:32:52 - [INFO] -   - Parking  : PK0001
-2025-11-30 18:32:52 - [INFO] -   - Contrat  : CT00001
-2025-11-30 18:32:52 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 18:32:52 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 18:33:47 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking
-2025-11-30 18:33:47 - [INFO] - Borne validée par le serveur.
-2025-11-30 18:33:47 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 18:33:47 - [INFO] - Envoi au serveur : CT00001
-2025-11-30 18:34:25 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
-2025-11-30 18:34:25 - [INFO] - Transaction terminée avec succès.
-2025-11-30 18:34:25 - [INFO] - ════════════════════════════════════
-2025-11-30 18:34:25 - [INFO] - ════════════════════════════════════════
-2025-11-30 18:34:25 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 18:34:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:51 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:51 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:12:51 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:12:51 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:12:51 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:12:51 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:12:51 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:12:52 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:12:52 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:12:54 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 09:12:55 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:12:55 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:12:57 - [DEBUG] - ID Parking saisi : PK0001
+2025-12-03 09:13:00 - [DEBUG] - ID Contrat saisi : CT00001
+2025-12-03 09:13:00 - [INFO] - Données collectées :
+2025-12-03 09:13:00 - [INFO] -   - Borne    : B0001
+2025-12-03 09:13:00 - [INFO] -   - Parking  : PK0001
+2025-12-03 09:13:00 - [INFO] -   - Contrat  : CT00001
+2025-12-03 09:13:00 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:13:00 - [INFO] - Envoi au serveur : B0001;PK0001
+2025-12-03 09:13:00 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:13:00 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:13:00 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:13:00 - [INFO] - Envoi au serveur : CT00001
+2025-12-03 09:13:01 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
+2025-12-03 09:13:01 - [INFO] - Transaction terminée avec succès.
+2025-12-03 09:13:01 - [INFO] - ════════════════════════════════════
+2025-12-03 09:13:01 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:13:01 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:13:01 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 19:07:52 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:07:52 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 19:07:52 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:07:52 - [INFO] - Mode ligne de commande détecté
-2025-11-30 19:07:52 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 19:07:52 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 19:07:52 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 19:07:52 - [INFO] - Connexion établie avec succès.
-2025-11-30 19:07:52 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 19:08:03 - [DEBUG] - ID Borne saisi : B0008
-2025-11-30 19:08:07 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 19:08:07 - [INFO] - Mode QR Code sélectionné
-2025-11-30 19:08:24 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
-2025-11-30 19:08:24 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
-2025-11-30 19:08:24 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
-2025-11-30 19:08:24 - [INFO] - QR Code decode avec succes : PK0003;CT00004
-2025-11-30 19:08:24 - [DEBUG] - ID Parking extrait : PK0003
-2025-11-30 19:08:24 - [DEBUG] - ID Contrat extrait : CT00004
-2025-11-30 19:08:24 - [INFO] - Données collectées :
-2025-11-30 19:08:24 - [INFO] -   - Borne    : B0008
-2025-11-30 19:08:24 - [INFO] -   - Parking  : PK0003
-2025-11-30 19:08:24 - [INFO] -   - Contrat  : CT00004
-2025-11-30 19:08:24 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 19:08:24 - [INFO] - Envoi au serveur : B0008;PK0003
-2025-11-30 19:08:25 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 19:08:25 - [INFO] - Borne validée par le serveur.
-2025-11-30 19:08:25 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 19:08:25 - [INFO] - Envoi au serveur : CT00004
-2025-11-30 19:08:26 - [INFO] - Reponse du serveur : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
-2025-11-30 19:08:26 - [ERROR] - Erreur lors de la validation du contrat : ERREUR;véhicule déjà enregistré à l'intérieur du parking.
-2025-11-30 19:08:26 - [INFO] - ════════════════════════════════════
-2025-11-30 19:08:26 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:08:26 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 19:08:26 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:13:24 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:13:24 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:13:24 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:13:24 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:13:24 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:13:24 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:13:24 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:13:24 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:13:24 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:13:28 - [DEBUG] - ID Borne saisi : B0004
+2025-12-03 09:13:29 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:13:29 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:13:34 - [DEBUG] - ID Parking saisi : PK0001
+2025-12-03 09:13:39 - [DEBUG] - ID Contrat saisi : CT00001
+2025-12-03 09:13:39 - [INFO] - Données collectées :
+2025-12-03 09:13:39 - [INFO] -   - Borne    : B0004
+2025-12-03 09:13:39 - [INFO] -   - Parking  : PK0001
+2025-12-03 09:13:39 - [INFO] -   - Contrat  : CT00001
+2025-12-03 09:13:39 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:13:39 - [INFO] - Envoi au serveur : B0004;PK0001
+2025-12-03 09:13:40 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:13:40 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:13:40 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:13:40 - [INFO] - Envoi au serveur : CT00001
+2025-12-03 09:13:40 - [INFO] - Reponse du serveur : Contrat valide pour sortie
+2025-12-03 09:13:40 - [INFO] - Transaction terminée avec succès.
+2025-12-03 09:13:40 - [INFO] - ════════════════════════════════════
+2025-12-03 09:13:40 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:13:40 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:13:40 - [INFO] - ════════════════════════════════════════
 
-2025-11-30 19:08:40 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:08:40 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 19:08:40 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:08:40 - [INFO] - Mode ligne de commande détecté
-2025-11-30 19:08:40 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 19:08:40 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 19:08:40 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 19:08:40 - [INFO] - Connexion établie avec succès.
-2025-11-30 19:08:40 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 19:08:54 - [DEBUG] - ID Borne saisi : B0003
-2025-11-30 19:08:56 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 19:08:56 - [INFO] - Mode QR Code sélectionné
-2025-11-30 19:09:04 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
-2025-11-30 19:09:04 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
-2025-11-30 19:09:04 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
-2025-11-30 19:09:05 - [INFO] - QR Code decode avec succes : PK0003;CT00004
-2025-11-30 19:09:05 - [DEBUG] - ID Parking extrait : PK0003
-2025-11-30 19:09:05 - [DEBUG] - ID Contrat extrait : CT00004
-2025-11-30 19:09:05 - [INFO] - Données collectées :
-2025-11-30 19:09:05 - [INFO] -   - Borne    : B0003
-2025-11-30 19:09:05 - [INFO] -   - Parking  : PK0003
-2025-11-30 19:09:05 - [INFO] -   - Contrat  : CT00004
-2025-11-30 19:09:05 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 19:09:05 - [INFO] - Envoi au serveur : B0003;PK0003
-2025-11-30 19:09:05 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 19:09:05 - [INFO] - Borne validée par le serveur.
-2025-11-30 19:09:05 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 19:09:05 - [INFO] - Envoi au serveur : CT00004
-2025-11-30 19:09:07 - [INFO] - Reponse du serveur : Contrat valide pour sortie
-2025-11-30 19:09:07 - [INFO] - Transaction terminée avec succès.
-2025-11-30 19:09:07 - [INFO] - ════════════════════════════════════
-2025-11-30 19:09:07 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:09:07 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 19:09:07 - [INFO] - ════════════════════════════════════════
-
-2025-11-30 19:48:21 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:48:21 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 19:48:21 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:48:21 - [INFO] - Mode ligne de commande détecté
-2025-11-30 19:48:21 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 19:48:21 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 19:48:21 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 19:48:21 - [INFO] - Connexion établie avec succès.
-2025-11-30 19:48:21 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 19:48:27 - [DEBUG] - ID Borne saisi : B0003
-2025-11-30 19:48:29 - [DEBUG] - Choix utilisateur : 1
-2025-11-30 19:48:29 - [INFO] - Mode QR Code sélectionné
-2025-11-30 19:48:39 - [DEBUG] - Chemin recu via saisie : '/home/yasser/Downloads/test1.png'
-2025-11-30 19:48:39 - [DEBUG] - Chemin nettoye : ''/home/yasser/Downloads/test1.png'' -> '/home/yasser/Downloads/test1.png'
-2025-11-30 19:48:39 - [INFO] - Lecture du QR Code : /home/yasser/Downloads/test1.png
-2025-11-30 19:48:39 - [INFO] - QR Code decode avec succes : PK0003;CT00004
-2025-11-30 19:48:39 - [DEBUG] - ID Parking extrait : PK0003
-2025-11-30 19:48:39 - [DEBUG] - ID Contrat extrait : CT00004
-2025-11-30 19:48:39 - [INFO] - Données collectées :
-2025-11-30 19:48:39 - [INFO] -   - Borne    : B0003
-2025-11-30 19:48:39 - [INFO] -   - Parking  : PK0003
-2025-11-30 19:48:39 - [INFO] -   - Contrat  : CT00004
-2025-11-30 19:48:39 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 19:48:39 - [INFO] - Envoi au serveur : B0003;PK0003
-2025-11-30 19:48:39 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 19:48:39 - [INFO] - Borne validée par le serveur.
-2025-11-30 19:48:39 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 19:48:39 - [INFO] - Envoi au serveur : CT00004
-2025-11-30 19:48:41 - [INFO] - Reponse du serveur : ERREUR;Contrat non valide et penalite attribuée
-2025-11-30 19:48:41 - [ERROR] - Erreur lors de la validation du contrat : ERREUR;Contrat non valide et penalite attribuée
-2025-11-30 19:48:41 - [INFO] - ════════════════════════════════════
-2025-11-30 19:48:41 - [INFO] - ════════════════════════════════════════
-2025-11-30 19:48:41 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 19:48:41 - [INFO] - ════════════════════════════════════════
-
-2025-11-30 20:01:15 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:01:15 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 20:01:15 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:01:15 - [INFO] - Mode ligne de commande détecté
-2025-11-30 20:01:15 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 20:01:15 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 20:01:15 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 20:01:15 - [INFO] - Connexion établie avec succès.
-2025-11-30 20:01:15 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 20:01:30 - [DEBUG] - ID Borne saisi : B001
-2025-11-30 20:01:33 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 20:01:33 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 20:01:35 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 20:01:46 - [DEBUG] - ID Contrat saisi : CT00007
-2025-11-30 20:01:46 - [INFO] - Données collectées :
-2025-11-30 20:01:46 - [INFO] -   - Borne    : B001
-2025-11-30 20:01:46 - [INFO] -   - Parking  : PK0001
-2025-11-30 20:01:46 - [INFO] -   - Contrat  : CT00007
-2025-11-30 20:01:46 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 20:01:46 - [INFO] - Envoi au serveur : B001;PK0001
-2025-11-30 20:01:46 - [INFO] - Reponse du serveur : ERREUR;Borne inconnue pour ce parking
-2025-11-30 20:01:46 - [ERROR] - Erreur détectée : ERREUR;Borne inconnue pour ce parking
-2025-11-30 20:01:46 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:01:46 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 20:01:46 - [INFO] - ════════════════════════════════════════
-
-2025-11-30 20:01:55 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:01:55 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 20:01:55 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:01:55 - [INFO] - Mode ligne de commande détecté
-2025-11-30 20:01:55 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 20:01:55 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 20:01:55 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 20:01:55 - [INFO] - Connexion établie avec succès.
-2025-11-30 20:01:55 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 20:01:58 - [DEBUG] - ID Borne saisi : B0001
-2025-11-30 20:01:59 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 20:01:59 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 20:02:01 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 20:02:06 - [DEBUG] - ID Contrat saisi : CT00007
-2025-11-30 20:02:06 - [INFO] - Données collectées :
-2025-11-30 20:02:06 - [INFO] -   - Borne    : B0001
-2025-11-30 20:02:06 - [INFO] -   - Parking  : PK0001
-2025-11-30 20:02:06 - [INFO] -   - Contrat  : CT00007
-2025-11-30 20:02:06 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 20:02:06 - [INFO] - Envoi au serveur : B0001;PK0001
-2025-11-30 20:02:06 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 20:02:06 - [INFO] - Borne validée par le serveur.
-2025-11-30 20:02:06 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 20:02:06 - [INFO] - Envoi au serveur : CT00007
-2025-11-30 20:02:08 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
-2025-11-30 20:02:08 - [INFO] - Transaction terminée avec succès.
-2025-11-30 20:02:08 - [INFO] - ════════════════════════════════════
-2025-11-30 20:02:08 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:02:08 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 20:02:08 - [INFO] - ════════════════════════════════════════
-
-2025-11-30 20:04:12 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:04:12 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
-2025-11-30 20:04:12 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:04:12 - [INFO] - Mode ligne de commande détecté
-2025-11-30 20:04:12 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
-2025-11-30 20:04:12 - [INFO] - Configuration : 127.0.0.1:8080
-2025-11-30 20:04:12 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
-2025-11-30 20:04:12 - [INFO] - Connexion établie avec succès.
-2025-11-30 20:04:12 - [DEBUG] - Timeout configuré : 5000ms
-2025-11-30 20:04:35 - [DEBUG] - ID Borne saisi : B0004
-2025-11-30 20:04:36 - [DEBUG] - Choix utilisateur : 2
-2025-11-30 20:04:36 - [INFO] - Mode saisie manuelle selectionne
-2025-11-30 20:04:40 - [DEBUG] - ID Parking saisi : PK0001
-2025-11-30 20:04:47 - [DEBUG] - ID Contrat saisi : CT00007
-2025-11-30 20:04:47 - [INFO] - Données collectées :
-2025-11-30 20:04:47 - [INFO] -   - Borne    : B0004
-2025-11-30 20:04:47 - [INFO] -   - Parking  : PK0001
-2025-11-30 20:04:47 - [INFO] -   - Contrat  : CT00007
-2025-11-30 20:04:47 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
-2025-11-30 20:04:47 - [INFO] - Envoi au serveur : B0004;PK0001
-2025-11-30 20:04:48 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
-2025-11-30 20:04:48 - [INFO] - Borne validée par le serveur.
-2025-11-30 20:04:48 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
-2025-11-30 20:04:48 - [INFO] - Envoi au serveur : CT00007
-2025-11-30 20:04:50 - [INFO] - Reponse du serveur : ERREUR;Contrat non valide et penalite attribuée
-2025-11-30 20:04:50 - [ERROR] - Erreur lors de la validation du contrat : ERREUR;Contrat non valide et penalite attribuée
-2025-11-30 20:04:50 - [INFO] - ════════════════════════════════════
-2025-11-30 20:04:50 - [INFO] - ════════════════════════════════════════
-2025-11-30 20:04:50 - [INFO] -           FIN DU CLIENT                 
-2025-11-30 20:04:50 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:15:11 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:15:11 - [INFO] -      DÉMARRAGE DU CLIENT PARKING        
+2025-12-03 09:15:11 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:15:11 - [INFO] - Mode ligne de commande détecté
+2025-12-03 09:15:11 - [INFO] - Arguments reçus : IP=127.0.0.1, PORT=8080
+2025-12-03 09:15:11 - [INFO] - Configuration : 127.0.0.1:8080
+2025-12-03 09:15:11 - [INFO] - Tentative de connexion à 127.0.0.1:8080...
+2025-12-03 09:15:11 - [INFO] - Connexion établie avec succès.
+2025-12-03 09:15:11 - [DEBUG] - Timeout configuré : 5000ms
+2025-12-03 09:15:15 - [DEBUG] - ID Borne saisi : B0001
+2025-12-03 09:15:17 - [DEBUG] - Choix utilisateur : 2
+2025-12-03 09:15:17 - [INFO] - Mode saisie manuelle selectionne
+2025-12-03 09:15:20 - [DEBUG] - ID Parking saisi : PK0001
+2025-12-03 09:15:24 - [DEBUG] - ID Contrat saisi : CT00001
+2025-12-03 09:15:24 - [INFO] - Données collectées :
+2025-12-03 09:15:24 - [INFO] -   - Borne    : B0001
+2025-12-03 09:15:24 - [INFO] -   - Parking  : PK0001
+2025-12-03 09:15:24 - [INFO] -   - Contrat  : CT00001
+2025-12-03 09:15:24 - [INFO] - ════════════ ÉTAPE 1/2 ════════════
+2025-12-03 09:15:24 - [INFO] - Envoi au serveur : B0001;PK0001
+2025-12-03 09:15:24 - [INFO] - Reponse du serveur : Borne reconnue et active dans le parking 
+2025-12-03 09:15:24 - [INFO] - Borne validée par le serveur.
+2025-12-03 09:15:24 - [INFO] - ════════════ ÉTAPE 2/2 ════════════
+2025-12-03 09:15:24 - [INFO] - Envoi au serveur : CT00001
+2025-12-03 09:15:25 - [INFO] - Reponse du serveur : Contrat actif, accès autorisé
+2025-12-03 09:15:25 - [INFO] - Transaction terminée avec succès.
+2025-12-03 09:15:25 - [INFO] - ════════════════════════════════════
+2025-12-03 09:15:25 - [INFO] - ════════════════════════════════════════
+2025-12-03 09:15:25 - [INFO] -           FIN DU CLIENT                 
+2025-12-03 09:15:25 - [INFO] - ════════════════════════════════════════
 

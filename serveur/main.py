@@ -1,47 +1,20 @@
-from parking import *
+from questions_vers_la_BD import *
 
 if __name__ == "__main__":
     print("=== TESTS FONCTIONS DE parking.py ===")
-   ## print(scanne_contrat("CT00001","B0001"))
-   ## print(scanne_contrat("CT00001","B0001"))
-    # test Question 1 et 2 : borne et parking
     
-
-    """ ## Borne Active et parking reconnue
-    print(tester_borne_parking("PK0001", "B0001"))
-    # parking reconnue mais borne en_panne
-    print(tester_borne_parking("PK0002", "B0002"))
-    # test d'une borne inexistante
-    print(tester_borne_parking("PK0002", "B0099"))
-
-    # Test Question 3 : contrat et parking
-
-    # Contrat existe et dans ce parking
-    print(tester_contrat_parking("PK0001", "CT00001"))
-    # Contrat existe mais pas dans ce parking
-    print(tester_contrat_parking("PK0003", "CT00001"))
-    # Contrat inexistant
-    print(tester_contrat_parking("PK0001", "CT99999"))
-    # Parking inexistant (selon les données de la base)
-    print(tester_contrat_parking("PK9999", "CT00001"))
-    # Les deux inexistants
-    print(tester_contrat_parking("PK9999", "CT99999")) """
+    #Question 1 ) Vérifier si la borne appartient au parking et est active
+    #print(tester_borne_parking("PK0001", "B0001"))  # Borne Active et parking reconnue
+    # Question 2 ) le contrat est il associer au bon parking
     
-    """  #test Question 3 : le nombre de vehicule par client 
-    print(extraire_nombre_vehicules_par_client()) """
-
-    #test Question 4 : le nombre de place libre et occupé dans un parking
-    """ resultat = extraire_places_par_parking()
-        faut tester si le resultat est non null
-    for ligne in resultat.split("\n"):
-        nom_parking, places_libres, places_occupees = ligne.split()
-        print(f"Parking: {nom_parking} | Places libres: {places_libres} | Places occupées: {places_occupees}")
-
- """
-        #test Question 5 :  les informations des clients qui possede un abonnement de minimum de 6 mois
-
-""" print(extraire_clients_abonnement_long()) """
-
-    #test Question 6 : les plus grands tarifs payé par des clients pas moins de 100 euro
-## print(extraire_paiements_importants())
-
+    #print(tester_contrat_parking("PK0001", "CT00001"))  # Contrat existe et dans ce parking
+    # Question 3 ) extraire le nombre de vehicule par personne 
+    #print(extraire_nombre_vehicules_par_client())
+    # Question 4 ) extraire le nombre de place libre et occupé dans un parking
+    #print(extraire_clients_abonnement_long())
+    #QUESTION 5)  affciher les plus grands tarifs paye par des clients pas moin de 100 euro
+    #print(extraire_paiements_importants())
+    # Quetion 6: Quels sont les clients enregistrés qui n'ont encore jamais effectué le moindre paiement?
+    #print(extraire_clients_sans_paiement())
+    # Quetion 7 : Qui est le client qui a écopé de la plus grande pénalité ?
+    #print(extraire_client_plus_grande_penalite())

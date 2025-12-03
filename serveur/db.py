@@ -1,3 +1,5 @@
+# Connexion vers la base de données PostgreSQL, 
+
 import psycopg2
 from dotenv import load_dotenv
 import os

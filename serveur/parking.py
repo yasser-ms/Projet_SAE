@@ -1,3 +1,18 @@
+"""
+parking.py
+
+Fichier principal côté serveur pour la gestion des parkings, bornes et contrats.
+Il contient des fonctions utilitaires pour :
+
+- Gérer et valider les ports de connexion du serveur.
+- Vérifier la validité et l'état des bornes dans les parkings.
+- Contrôler la validité des contrats (abonnement ou ticket horaire).
+- Calculer et enregistrer les pénalités en cas de dépassement.
+- Fournir des fonctions auxiliaires pour l'accès à la base de données et la génération d'IDs uniques.
+
+Ce module est utilisé par le serveur TCP pour traiter les requêtes des clients, 
+assurer l'intégrité des données et journaliser toutes les opérations importantes.
+"""
 from db import get_connection
 from datetime import datetime
 import sys
